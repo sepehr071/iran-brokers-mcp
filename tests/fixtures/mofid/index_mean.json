@@ -1,0 +1,14 @@
+[
+ {
+  "isin": "IREXOVERALLINDEX",
+  "closeToClosingPrev": -0.5656084106286929,
+  "closingToClosingPrev": -0.6397558248430357,
+  "windowStart": 1793511060000
+ },
+ {
+  "isin": "IREXOVERALLINDEX",
+  "closeToClosingPrev": -0.5235339241263293,
+  "closingToClosingPrev": -0.5406708040355146,
+  "windowStart": 1793511000000
+ }
+]

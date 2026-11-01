@@ -1,0 +1,28 @@
+{
+ "live": [
+  {
+   "type": "askqueue",
+   "count": 215,
+   "perc": 28,
+   "val": 115884251898955
+  },
+  {
+   "type": "bidqueue",
+   "count": 88,
+   "perc": 12,
+   "val": 58401581043732
+  }
+ ],
+ "history": [
+  {
+   "type": "askqueue",
+   "time": "08:45",
+   "ct": 272
+  },
+  {
+   "type": "askqueue",
+   "time": "08:46",
+   "ct": 279
+  }
+ ]
+}

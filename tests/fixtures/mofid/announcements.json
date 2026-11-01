@@ -1,0 +1,83 @@
+[
+ {
+  "title": "اطلاعات و صورت‌های مالی میاندوره‌ای  دوره 6 ماهه منتهی به  1405/06/31 (حسابرسی شده) (شرکت پیمان گسترش شبکه همکاران)",
+  "publishDate": "2026-11-01 12:04:20",
+  "sendDate": "2026-11-01 12:04:20",
+  "htmlUrl": "https://www.codal.ir/Reports/Decision.aspx?LetterSerial=RRT6qlqAwU5f3MhLYIkE7g%3d%3d&rt=5&let=6&ct=0&ft=-1",
+  "attachmentUrl": "https://codal.ir/Reports/Attachment.aspx?LetterSerial=RRT6qlqAwU5f3MhLYIkE7g%3d%3d",
+  "pdfUrl": "https://www.codal.ir/DownloadFile.aspx?hs=RRT6qlqAwU5f3MhLYIkE7g%3d%3d&ft=1005&let=6",
+  "type": {
+   "name": "Financial Statements\r",
+   "key": 6,
+   "category": "other"
+  },
+  "company": {
+   "symbol": "همکاران37",
+   "name": "پیمان گسترش شبکه همکاران",
+   "isin": null
+  },
+  "periodEndingDate": "2026-09-22",
+  "fiscalYear": "2027-03-20",
+  "period": 6,
+  "industry": {
+   "name": null,
+   "key": null
+  },
+  "auditingKey": 1,
+  "eventSummary": []
+ },
+ {
+  "title": "صورت وضعیت پورتفوی صندوق سرمایه گذاری دوره 1 ماهه منتهی به  1405/07/30",
+  "publishDate": "2026-11-01 12:03:56",
+  "sendDate": "2026-11-01 12:03:56",
+  "htmlUrl": "",
+  "attachmentUrl": "https://codal.ir/Reports/Attachment.aspx?LetterSerial=Xt0rU8CD4yVWEzxHP7OOObOOOmiQ%3d%3d",
+  "pdfUrl": "",
+  "type": {
+   "name": "Portfolio\r\n",
+   "key": 151,
+   "category": "other"
+  },
+  "company": {
+   "symbol": "نهایت نگر بازار",
+   "name": "صندوق سرمایه گذاری اختصاصی بازارگردانی نهایت نگر",
+   "isin": null
+  },
+  "periodEndingDate": "2026-10-22",
+  "fiscalYear": "2027-09-22",
+  "period": 1,
+  "industry": {
+   "name": null,
+   "key": null
+  },
+  "auditingKey": 2,
+  "eventSummary": []
+ },
+ {
+  "title": "اطلاعات و صورت‌های مالی میاندوره‌ای  دوره 6 ماهه منتهی به  1405/06/31 (حسابرسی شده)",
+  "publishDate": "2026-11-01 11:58:40",
+  "sendDate": "2026-11-01 11:58:40",
+  "htmlUrl": "https://www.codal.ir/Reports/Decision.aspx?LetterSerial=7ytOOObOOO9k9vUJCD1uJZVtpapw%3d%3d&rt=2&let=6&ct=5&ft=2",
+  "attachmentUrl": "https://codal.ir/Reports/Attachment.aspx?LetterSerial=7ytOOObOOO9k9vUJCD1uJZVtpapw%3d%3d",
+  "pdfUrl": "https://www.codal.ir/DownloadFile.aspx?hs=7ytOOObOOO9k9vUJCD1uJZVtpapw%3d%3d&ft=1005&let=6",
+  "type": {
+   "name": "Financial Statements\r",
+   "key": 6,
+   "category": "other"
+  },
+  "company": {
+   "symbol": "پارند ثابت",
+   "name": "صندوق سرمایه گذاری پارند پایدار سپهر(ETF)",
+   "isin": null
+  },
+  "periodEndingDate": "2026-09-22",
+  "fiscalYear": "2027-03-20",
+  "period": 6,
+  "industry": {
+   "name": null,
+   "key": null
+  },
+  "auditingKey": 1,
+  "eventSummary": []
+ }
+]

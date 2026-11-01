@@ -1,0 +1,24 @@
+[
+ {
+  "key": 1,
+  "name": null,
+  "nameFa": "کاغذ و رول آرتا پرشیان",
+  "symbol": null,
+  "symbolFa": "آپ1",
+  "industry_fa": null,
+  "industry_isin": null,
+  "parent_company_key": 21098,
+  "isSubsidiary": true
+ },
+ {
+  "key": 1061,
+  "name": "S*I. N. C. Ind.",
+  "nameFa": "ملی‌ صنایع‌ مس‌ ایران‌",
+  "symbol": "MSMI1",
+  "symbolFa": "فملی",
+  "industry_fa": "تولید فلزات گرانبهای غیراهن",
+  "industry_isin": "MetalsExIron",
+  "parent_company_key": null,
+  "isSubsidiary": false
+ }
+]

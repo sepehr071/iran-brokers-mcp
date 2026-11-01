@@ -1,0 +1,88 @@
+{
+ "isin": "IREXOVERALLINDEX",
+ "symbolLocal": "IREX",
+ "symbolLocalFa": "شاخص بورس ایران",
+ "symbolPouya": "IREX",
+ "symbolPouyaFa": "شاخص بورس ایران",
+ "nameLocal": "Iran Exchange",
+ "nameLocalFa": "شاخص بورس ایران",
+ "namePouya": "Iran Exchange",
+ "namePouyaFa": "شاخص بورس ایران",
+ "type": "IndexOverall",
+ "marketCap": 260761959671351800,
+ "freeFloat": 0.26709323393046747,
+ "exchange": {
+  "isin": "IREX"
+ },
+ "members": [
+  {
+   "isin": "IRO1MSMI0001",
+   "symbolPouya": "MSMI1",
+   "symbolPouyaFa": "فملی",
+   "namePouya": "S*I. N. C. Ind.",
+   "namePouyaFa": "ملی‌ صنایع‌ مس‌ ایران‌",
+   "type": "CommonStock",
+   "tseTickerKey": "35425587644337450",
+   "numberOfOutstandingShares": 1440000000000,
+   "marketCap": 39859200000000000,
+   "freeFloat": 0.34,
+   "tickerTypeKey": 1,
+   "tickerKey": 887,
+   "firstTradingDayKey": 20070204,
+   "company_type_key": 1000000,
+   "exchange": {
+    "isin": "IRTSENO",
+    "openTimeKey": "0900",
+    "closeTimeKey": "1459"
+   },
+   "exchange_key": 1,
+   "indices": {}
+  },
+  {
+   "isin": "IRO1PKLJ0001",
+   "symbolPouya": "PKLJ1",
+   "symbolPouyaFa": "فارس",
+   "namePouya": "Khalij Fars",
+   "namePouyaFa": "صنایع پتروشیمی خلیج فارس",
+   "type": "CommonStock",
+   "tseTickerKey": "25244329144808274",
+   "numberOfOutstandingShares": 1250000000000,
+   "marketCap": 18900000000000000,
+   "freeFloat": 0.07,
+   "tickerTypeKey": 1,
+   "tickerKey": 1033,
+   "firstTradingDayKey": 20130416,
+   "company_type_key": 1000002,
+   "exchange": {
+    "isin": "IRTSENO",
+    "openTimeKey": "0900",
+    "closeTimeKey": "1459"
+   },
+   "exchange_key": 1,
+   "indices": {}
+  },
+  {
+   "isin": "IRO1FOLD0001",
+   "symbolPouya": "FOLD1",
+   "symbolPouyaFa": "فولاد",
+   "namePouya": "S*Mobarakeh Steel",
+   "namePouyaFa": "فولاد مبارکه اصفهان",
+   "type": "CommonStock",
+   "tseTickerKey": "46348559193224090",
+   "numberOfOutstandingShares": 1935000000000,
+   "marketCap": 8204400000000000,
+   "freeFloat": 0.36,
+   "tickerTypeKey": 1,
+   "tickerKey": 526,
+   "firstTradingDayKey": 20070311,
+   "company_type_key": 1000000,
+   "exchange": {
+    "isin": "IRTSENO",
+    "openTimeKey": "0900",
+    "closeTimeKey": "1459"
+   },
+   "exchange_key": 1,
+   "indices": {}
+  }
+ ]
+}

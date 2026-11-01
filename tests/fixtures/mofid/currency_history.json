@@ -1,0 +1,62 @@
+[
+ {
+  "changePercent": 0.305,
+  "dateTimeLocal": "2026-10-19",
+  "close": 2632000
+ },
+ {
+  "changePercent": 0.608,
+  "dateTimeLocal": "2026-10-20",
+  "close": 2648000
+ },
+ {
+  "changePercent": 2.417,
+  "dateTimeLocal": "2026-10-21",
+  "close": 2712000
+ },
+ {
+  "changePercent": 0.848,
+  "dateTimeLocal": "2026-10-22",
+  "close": 2735000
+ },
+ {
+  "changePercent": -1.938,
+  "dateTimeLocal": "2026-10-24",
+  "close": 2682000
+ },
+ {
+  "changePercent": 0.858,
+  "dateTimeLocal": "2026-10-25",
+  "close": 2705000
+ },
+ {
+  "changePercent": 0.444,
+  "dateTimeLocal": "2026-10-26",
+  "close": 2717000
+ },
+ {
+  "changePercent": -0.699,
+  "dateTimeLocal": "2026-10-27",
+  "close": 2698000
+ },
+ {
+  "changePercent": -0.111,
+  "dateTimeLocal": "2026-10-28",
+  "close": 2695000
+ },
+ {
+  "changePercent": 0.631,
+  "dateTimeLocal": "2026-10-29",
+  "close": 2712000
+ },
+ {
+  "changePercent": -0.111,
+  "dateTimeLocal": "2026-10-31",
+  "close": 2709000
+ },
+ {
+  "changePercent": 0.48,
+  "dateTimeLocal": "2026-11-01",
+  "close": 2722000
+ }
+]

@@ -1,0 +1,61 @@
+{
+ "isin": "IRO1MSMI0001",
+ "symbolPouya": "MSMI1",
+ "symbolPouyaFa": "فملی",
+ "namePouya": "S*I. N. C. Ind.",
+ "namePouyaFa": "ملی‌ صنایع‌ مس‌ ایران‌",
+ "type": "CommonStock",
+ "tseTickerKey": "35425587644337450",
+ "numberOfOutstandingShares": 1440000000000,
+ "marketCap": 39859200000000000,
+ "freeFloat": 0.34,
+ "tickerTypeKey": 1,
+ "tickerKey": 887,
+ "firstTradingDayKey": 20070204,
+ "company_type_key": 1000000,
+ "exchange": {
+  "isin": "IRTSENO",
+  "openTimeKey": "0900",
+  "closeTimeKey": "1459"
+ },
+ "exchange_key": 1,
+ "indices": {
+  "indexOverallLocal": {
+   "isin": "IRX6XTPI0006",
+   "exchange": {
+    "isin": "IRTSENO"
+   },
+   "namePouya": "TSE Overall Index - TEDPIX"
+  },
+  "indexIndustryLocal": {
+   "isin": "IRX6X27T0006",
+   "exchange": {
+    "isin": "IRTSENO"
+   },
+   "namePouya": "TSE Basic Metals"
+  },
+  "indexOverallPouya": {
+   "isin": "IREXOVERALLINDEX",
+   "exchange": {
+    "isin": "IREX"
+   },
+   "namePouya": "Iran Exchange"
+  },
+  "indexIndustryPouya": {
+   "isin": "IREXMETALSEXIRON",
+   "exchange": {
+    "isin": "IREX"
+   },
+   "namePouya": "Metals Ex. Iron"
+  }
+ },
+ "company": {
+  "companyKey": 1061,
+  "typeKey": 1000000,
+  "profile": null,
+  "type": "Manufacturing",
+  "name": "National Iranian Copper Industries Co",
+  "symbol": "فملی",
+  "anyConsolidated": true
+ }
+}

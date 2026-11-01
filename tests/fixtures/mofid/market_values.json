@@ -1,0 +1,52 @@
+{
+ "bidQueue": [
+  {
+   "close": 68950,
+   "closing": 68950,
+   "closingChangePercent": 2.99,
+   "high": 68950,
+   "isin": "IRO1TBRZ0001",
+   "lastChangePercent": 2.99,
+   "low": 68950,
+   "maxAuthorizedValue": 68950,
+   "minAuthorizedValue": 64950,
+   "open": 68950,
+   "previousClosing": 66950,
+   "symbol": "شتبریز",
+   "stateKey": 7,
+   "volume": 2434104,
+   "askQuantity": 0,
+   "askPrice": null,
+   "askValue": null,
+   "bidPrice": 68950,
+   "bidQuantity": 344139250,
+   "bidValue": 23728401287500,
+   "type": "bid_queue",
+   "TradeValue": 167831470800
+  },
+  {
+   "close": 6070,
+   "closing": 6070,
+   "closingChangePercent": 2.88,
+   "high": 6070,
+   "isin": "IRO1MMUT0001",
+   "lastChangePercent": 2.88,
+   "low": 6070,
+   "maxAuthorizedValue": 6070,
+   "minAuthorizedValue": 5730,
+   "open": 6070,
+   "previousClosing": 5900,
+   "symbol": "فساپ",
+   "stateKey": 7,
+   "volume": 68170732,
+   "askQuantity": 0,
+   "askPrice": null,
+   "askValue": null,
+   "bidPrice": 6070,
+   "bidQuantity": 979733655,
+   "bidValue": 5946983285850,
+   "type": "bid_queue",
+   "TradeValue": 413796343240
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+[
+ {
+  "isin": "IRO1MSMI0001",
+  "symbol": "فملی",
+  "price": 26860,
+  "theoretical": 27680,
+  "chperc": -3,
+  "techScore": "Neutral",
+  "fundScore": 5.63,
+  "abbr": "MetalsExIron",
+  "stateKey": 7
+ }
+]

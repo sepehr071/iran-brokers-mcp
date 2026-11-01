@@ -1,0 +1,76 @@
+{
+ "items": [
+  {
+   "Id": "peTtm",
+   "name": "P/E (TTM)",
+   "value": 6.978778,
+   "format": "Number"
+  },
+  {
+   "Id": "ROA",
+   "name": "Return on Asset",
+   "value": 0.1387092227,
+   "format": "Number"
+  },
+  {
+   "Id": "ROE",
+   "name": "Return on Equity",
+   "value": 0.5748940606,
+   "format": "Number"
+  },
+  {
+   "Id": "payoutRatio",
+   "name": "Payout Ratio",
+   "value": 0.49,
+   "format": "Number"
+  },
+  {
+   "Id": "dividendYield",
+   "name": "Dividend Yield",
+   "value": 0.067,
+   "format": "Number"
+  },
+  {
+   "Id": "p2b",
+   "name": "P/B",
+   "value": 3.326433,
+   "format": "Number"
+  },
+  {
+   "Id": "p2s",
+   "name": "P/S (TTM)",
+   "value": 1.769132,
+   "format": "Number"
+  },
+  {
+   "Id": "p2fcff",
+   "name": "P/FCFF)",
+   "value": 15.288859,
+   "format": "Number"
+  },
+  {
+   "Id": "p2fcfe",
+   "name": "P/FCFE",
+   "value": 17.131201,
+   "format": "Number"
+  },
+  {
+   "Id": "evtoebit",
+   "name": "EV/EBIT",
+   "value": 7.211597,
+   "format": "Number"
+  },
+  {
+   "Id": "ev2s",
+   "name": "EV/S",
+   "value": null,
+   "format": "Number"
+  },
+  {
+   "Id": "p2d",
+   "name": "P/D",
+   "value": 20.53114733,
+   "format": "Number"
+  }
+ ]
+}

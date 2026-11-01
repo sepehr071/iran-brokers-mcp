@@ -1,0 +1,44 @@
+{
+ "result": [
+  {
+   "isin": "IRO3SOJZ0001",
+   "symbol": "فسوژ",
+   "price": 34060,
+   "theoreticalPrice": 35110,
+   "chperc": -3,
+   "stateKey": 7,
+   "sectionScore": 10,
+   "totalScore": 6.52
+  },
+  {
+   "isin": "IRO1SURO0001",
+   "symbol": "ساروم",
+   "price": 280000,
+   "theoreticalPrice": 284900,
+   "chperc": -1.72,
+   "stateKey": 7,
+   "sectionScore": 10,
+   "totalScore": 6.17
+  },
+  {
+   "isin": "IRO3SSYZ0001",
+   "symbol": "سپیدار",
+   "price": 11480,
+   "theoreticalPrice": 11830,
+   "chperc": -2.96,
+   "stateKey": 7,
+   "sectionScore": 10,
+   "totalScore": 5.95
+  },
+  {
+   "isin": "IRO3CBBP0001",
+   "symbol": "سباقر",
+   "price": 451800,
+   "theoreticalPrice": 447600,
+   "chperc": 0.93,
+   "stateKey": 7,
+   "sectionScore": 9.8,
+   "totalScore": 6.72
+  }
+ ]
+}

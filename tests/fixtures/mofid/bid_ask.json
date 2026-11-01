@@ -1,0 +1,59 @@
+{
+ "sumVolumeBid": 8137482,
+ "sumVolumeAsk": 3359973,
+ "sumValueBid": 218486008230,
+ "sumValueAsk": 90308009730,
+ "bidAskList": {
+  "1": {
+   "rank": 1,
+   "bidPrice": 26850,
+   "bidQty": 7846994,
+   "bidNumberOfOrder": 256,
+   "askPrice": 26860,
+   "askQty": 902126,
+   "askNumberOfOrder": 55,
+   "eventDatetime": 1793522021000
+  },
+  "2": {
+   "rank": 2,
+   "bidPrice": 26840,
+   "bidQty": 280432,
+   "bidNumberOfOrder": 14,
+   "askPrice": 26870,
+   "askQty": 430742,
+   "askNumberOfOrder": 10,
+   "eventDatetime": 1793521969000
+  },
+  "3": {
+   "rank": 3,
+   "bidPrice": 26600,
+   "bidQty": 6044,
+   "bidNumberOfOrder": 4,
+   "askPrice": 26880,
+   "askQty": 1159183,
+   "askNumberOfOrder": 15,
+   "eventDatetime": 1793521997000
+  },
+  "4": {
+   "rank": 4,
+   "bidPrice": 26590,
+   "bidQty": 1509,
+   "bidNumberOfOrder": 1,
+   "askPrice": 26890,
+   "askQty": 307301,
+   "askNumberOfOrder": 5,
+   "eventDatetime": 1793521979000
+  },
+  "5": {
+   "rank": 5,
+   "bidPrice": 26580,
+   "bidQty": 2503,
+   "bidNumberOfOrder": 2,
+   "askPrice": 26900,
+   "askQty": 560621,
+   "askNumberOfOrder": 25,
+   "eventDatetime": 1793521976000
+  }
+ },
+ "winStart": 1793478600000
+}

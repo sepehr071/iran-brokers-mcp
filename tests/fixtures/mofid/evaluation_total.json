@@ -1,0 +1,70 @@
+{
+ "result": [
+  {
+   "isin": "IRO3IZIZ0001",
+   "symbol": "فگستر",
+   "price": 16480,
+   "theoretical": 16220,
+   "chperc": 1.6,
+   "techScore": "Buy",
+   "fundScore": 7.47,
+   "abbr": "MetalsExIron",
+   "stateKey": 7
+  },
+  {
+   "isin": "IRO1SEPA0001",
+   "symbol": "فسپا",
+   "price": 12220,
+   "theoretical": 12590,
+   "chperc": -2.9,
+   "techScore": "Buy",
+   "fundScore": 6.91,
+   "abbr": "SteelAndIron",
+   "stateKey": 7
+  },
+  {
+   "isin": "IRO1FAJR0001",
+   "symbol": "فجر",
+   "price": 9900,
+   "theoretical": 10180,
+   "chperc": -2.8,
+   "techScore": "Buy",
+   "fundScore": 6.87,
+   "abbr": "SteelAndIron",
+   "stateKey": 7
+  },
+  {
+   "isin": "IRO3CAWZ0001",
+   "symbol": "چخزر",
+   "price": 273300,
+   "theoretical": 281600,
+   "chperc": -2.9,
+   "techScore": "Neutral",
+   "fundScore": 6.79,
+   "abbr": "Wood",
+   "stateKey": 7
+  },
+  {
+   "isin": "IRO3TOSZ0001",
+   "symbol": "توسن",
+   "price": 17660,
+   "theoretical": 18200,
+   "chperc": -3,
+   "techScore": "Buy",
+   "fundScore": 6.76,
+   "abbr": "IT",
+   "stateKey": 7
+  },
+  {
+   "isin": "IRO3CBBP0001",
+   "symbol": "سباقر",
+   "price": 452700,
+   "theoretical": 447600,
+   "chperc": 1.1,
+   "techScore": "Neutral",
+   "fundScore": 6.72,
+   "abbr": "Cement",
+   "stateKey": 7
+  }
+ ]
+}

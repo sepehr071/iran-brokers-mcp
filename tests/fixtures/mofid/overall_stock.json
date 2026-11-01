@@ -1,0 +1,234 @@
+{
+ "quotes": {
+  "open": 26900,
+  "close": 26850,
+  "high": 27320,
+  "low": 26850,
+  "date": 20261101,
+  "volume": 631212637,
+  "vwap": 26890,
+  "value": 16973283524760,
+  "numberOfTrades": 47532,
+  "baseVolume": 1,
+  "freeFloat": 0.34,
+  "numberOfOutstandingShares": 1440000000000,
+  "marketCap": 38721600000000000,
+  "adjustingCoef": 1,
+  "previousVwap": 27680,
+  "minAuthorized": 26850,
+  "maxAuthorized": 28510,
+  "returnValue": -0.03,
+  "dateTime": "2026-11-01 12:05:19",
+  "orderEntryState": "Authorized"
+ },
+ "performanceSummary": [
+  {
+   "Id": "Return1Month",
+   "name": "Return 1M",
+   "value": -0.04821,
+   "format": "Percentage"
+  },
+  {
+   "Id": "Return3Months",
+   "name": "Return 3M",
+   "value": 0.786427,
+   "format": "Percentage"
+  },
+  {
+   "Id": "Return1Year",
+   "name": "Return 1Y",
+   "value": 3.57414,
+   "format": "Percentage"
+  },
+  {
+   "Id": "AvgVolume30Days",
+   "name": "30D Avg. Vol",
+   "value": 474410476.4,
+   "format": "Number"
+  },
+  {
+   "Id": "AvgVolume90Days",
+   "name": "90D Avg. Vol",
+   "value": 526583551.6888889,
+   "format": "Number"
+  },
+  {
+   "Id": "AvgVolume200Days",
+   "name": "200D Avg. Vol",
+   "value": 443945465.695,
+   "format": "Number"
+  },
+  {
+   "Id": "AvgValue30Days",
+   "name": "30D Avg. Val",
+   "value": 13610629418090.334,
+   "format": "Number"
+  },
+  {
+   "Id": "AvgValue90Days",
+   "name": "90D Avg. Val",
+   "value": 12303808483337.889,
+   "format": "Number"
+  },
+  {
+   "Id": "AvgValue200Days",
+   "name": "200D Avg. Val",
+   "value": 8250804813463.1,
+   "format": "Number"
+  },
+  {
+   "Id": "Beta",
+   "name": "Beta",
+   "value": 1.3362231287,
+   "format": "Number"
+  },
+  {
+   "Id": "NAV",
+   "name": "NAV",
+   "value": null,
+   "format": "Number"
+  },
+  {
+   "Id": "p2nav",
+   "name": "P/NAV",
+   "value": null,
+   "format": "Number"
+  },
+  {
+   "Id": "HighLow1Year",
+   "name": "52 WK Range",
+   "value": [
+    5805,
+    34180
+   ],
+   "format": "Number"
+  }
+ ],
+ "profile": {
+  "symbol": "فملی",
+  "name": "ملی‌ صنایع‌ مس‌ ایران‌",
+  "ipoDate": "2007-02-04",
+  "firstSharePrice": 3704,
+  "firstSharePriceAdjusted": 3.0909202118007952,
+  "tradedDays": 4318,
+  "totalDays": 4741,
+  "firstListedCapital": 5789645000000,
+  "exchange": "بورس تهران",
+  "sector": "مواد پایه",
+  "industry": "تولید فلزات گرانبهای غیراهن",
+  "fiscalYear": 20270320,
+  "fiscalYearShamsi": "1405/12/29",
+  "activitySubjectFA": "1.اکتشاف، استخراج و بهره‌برداری از معادن و فلزات داخل و خارج از کشور، 2.تولید محصولات پر عیار شده سنگ‌های معدنی و فلزات و تصفیه آنها و محصولات فرعی و وابسته به آنها، 3.توزیع و فروش محصولات اعم از داخلی و خارجی،",
+  "officeAddress": "مجتمع مس سرچشمه و مجتمع مس میدوک در استان کرمان و مجتمع مس سونگون در تبریز شهرستان ورزقان واقع شده اند.",
+  "officeTel": "021-82130000",
+  "shareAddress": "تهران خیابان خالد اسلامبولی (وزراء) خیابان 11 پلاک 22 طبقه اول",
+  "shareOfficeTel": "021-82138011-021-82138046-021-88724410",
+  "siteUrl": "www.nicico.com",
+  "numberOfOutstandingShares": 1440000000000,
+  "floatingPercent": 34,
+  "ipoDateShamsi": "1385/11/15",
+  "marketBoard": "بازار اول (تابلوی اصلی) بورس",
+  "auditor": ""
+ },
+ "financialSummary": [
+  {
+   "Id": "peTtm",
+   "name": "P/E (TTM)",
+   "value": 12.950801041679044,
+   "format": "Number"
+  },
+  {
+   "Id": "epsTtm",
+   "name": "EPS (TTM)",
+   "value": 2073.2308305555557,
+   "format": "Number"
+  },
+  {
+   "Id": "dividend",
+   "name": "Dividend",
+   "value": 450,
+   "format": "Number"
+  },
+  {
+   "Id": "dividendYield",
+   "name": "Dividend Yield",
+   "value": 0.022,
+   "format": "Number"
+  },
+  {
+   "Id": "p2b",
+   "name": "P/B",
+   "value": 8.680736,
+   "format": "Number"
+  },
+  {
+   "Id": "p2s",
+   "name": "P/S",
+   "value": 7.026072,
+   "format": "Number"
+  },
+  {
+   "Id": "p2s_monthly",
+   "name": "P/S Monthly",
+   "value": 6.6317889647,
+   "format": "Number"
+  },
+  {
+   "Id": "ev2s",
+   "name": "EV/S",
+   "value": 6.883994087,
+   "format": "Number"
+  },
+  {
+   "Id": "ev2s_monthly",
+   "name": "EV/S Monthly",
+   "value": 6.5298542457,
+   "format": "Number"
+  },
+  {
+   "Id": "p2fcff",
+   "name": "P/FCFF",
+   "value": 31.855222,
+   "format": "Number"
+  },
+  {
+   "Id": "p2fcfe",
+   "name": "P/FCFE",
+   "value": 33.175823,
+   "format": "Number"
+  },
+  {
+   "Id": "evtoebit",
+   "name": "EV/EBIT",
+   "value": 10.67119093,
+   "format": "Number"
+  },
+  {
+   "Id": "p2d",
+   "name": "P/D",
+   "value": 81.859047,
+   "format": "Number"
+  },
+  {
+   "Id": "ROA",
+   "name": "Return on Asset",
+   "value": 0.5554359253,
+   "format": "Number"
+  },
+  {
+   "Id": "ROE",
+   "name": "Return on Equity",
+   "value": 0.9556859996,
+   "format": "Number"
+  },
+  {
+   "Id": "payoutRatio",
+   "name": "Payout Ratio",
+   "value": 0.314,
+   "format": "Number"
+  }
+ ],
+ "industry": {
+  "isin": "MetalsExIron"
+ }
+}

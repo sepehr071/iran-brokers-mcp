@@ -1,0 +1,84 @@
+{
+ "mostvalue": [
+  {
+   "isin": "IRO1MSMI0001",
+   "name": "فملی",
+   "value": 17586501816460,
+   "type": "mostvalue",
+   "changePercent": -3,
+   "tradeValue": 17606942748310,
+   "price": 26850,
+   "return1MonthValue": -0.01935,
+   "AverageOfLast30Value": 14119327169348.666,
+   "stateKey": 7,
+   "theoreticalPrice": 27680
+  },
+  {
+   "isin": "IRO1PNES0001",
+   "name": "شپنا",
+   "value": 10745418675300,
+   "type": "mostvalue",
+   "changePercent": -3,
+   "tradeValue": 10745659275300,
+   "price": 12030,
+   "return1MonthValue": -0.123178,
+   "AverageOfLast30Value": 10274122791401,
+   "stateKey": 7,
+   "theoreticalPrice": 12400
+  },
+  {
+   "isin": "IRO1PTEH0001",
+   "name": "شتران",
+   "value": 9920995580730,
+   "type": "mostvalue",
+   "changePercent": -2.9,
+   "tradeValue": 9920995580730,
+   "price": 5980,
+   "return1MonthValue": -0.108793,
+   "AverageOfLast30Value": 5720362889912.667,
+   "stateKey": 7,
+   "theoreticalPrice": 6160
+  }
+ ],
+ "netindividual": [
+  {
+   "isin": "IRO1SHLN0001",
+   "name": "شارپیلن",
+   "value": 0.976817,
+   "type": "netindividual",
+   "changePercent": 3,
+   "tradeValue": 26600672000,
+   "price": 4480,
+   "return1MonthValue": 0.28,
+   "AverageOfLast30Value": 0.411672,
+   "stateKey": 7,
+   "theoreticalPrice": 4350
+  },
+  {
+   "isin": "IRO3MOIZ0001",
+   "name": "ومعلم",
+   "value": 0.912057,
+   "type": "netindividual",
+   "changePercent": 2.9,
+   "tradeValue": 24998430720,
+   "price": 4560,
+   "return1MonthValue": 0.357143,
+   "AverageOfLast30Value": 0.250451,
+   "stateKey": 7,
+   "theoreticalPrice": 4430
+  },
+  {
+   "isin": "IRO1GHEG0001",
+   "name": "قهکمت",
+   "value": 0.878616,
+   "type": "netindividual",
+   "changePercent": 3,
+   "tradeValue": 473979513560,
+   "price": 10350,
+   "return1MonthValue": -0.034515,
+   "AverageOfLast30Value": -0.13095,
+   "stateKey": 7,
+   "theoreticalPrice": 10050
+  }
+ ]
+}

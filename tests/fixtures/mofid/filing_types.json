@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Letter\r\n",
+  "nameFa": "نامه",
+  "key": 0
+ },
+ {
+  "name": "First EPS Estimate\r\n",
+  "nameFa": "اولین پیش بینی درامد هر سهم",
+  "key": 1
+ },
+ {
+  "name": "EPS Estimates\r\n",
+  "nameFa": "پیش بینی درامد هر سهم",
+  "key": 2
+ },
+ {
+  "name": "Financial Statements\r",
+  "nameFa": "اطلاعات و صورتهای مالی میاندوره ای",
+  "key": 6
+ },
+ {
+  "name": "Monthly Portfolio\r\n",
+  "nameFa": "صورت وضعیت پورتفوی",
+  "key": 8
+ },
+ {
+  "name": "Material Information Disclosure\r\n",
+  "nameFa": "شفاف سازی",
+  "key": 11
+ },
+ {
+  "name": "Other\r\n",
+  "nameFa": "سایر",
+  "key": 12
+ },
+ {
+  "name": null,
+  "nameFa": "فهرست دارندگان اطلاعات نهانی",
+  "key": 13
+ },
+ {
+  "name": "Annual General Meeting Invitation\r\n",
+  "nameFa": "اگهی دعوت به مجمع عمومی عادی سالیانه",
+  "key": 16
+ },
+ {
+  "name": "Extraordinary Annual General Meeting Invitation\r\n",
+  "nameFa": "اگهی دعوت به مجمع عمومی عادی بطور فوق العاده",
+  "key": 17
+ },
+ {
+  "name": "Extraordinary Meeting Invitation\r\n",
+  "nameFa": "اگهی دعوت به مجمع عمومی فوق العاده",
+  "key": 18
+ },
+ {
+  "name": "Board Member Change\r\n",
+  "nameFa": "معرفی یا تغییر در ترکیب اعضای هیئت‌مدیره",
+  "key": 19
+ }
+]

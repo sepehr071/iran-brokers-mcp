@@ -1,0 +1,172 @@
+{
+ "warnings": [],
+ "errors": [],
+ "isSuccess": true,
+ "hasWarnings": false,
+ "value": [
+  {
+   "id": 1,
+   "key": "10600",
+   "code": "10600",
+   "isin": "",
+   "seo": 810,
+   "enTitle": "pishtaz",
+   "title": "پیشتاز",
+   "fullTitle": "صندوق پیشتاز",
+   "fundType": "سهامی",
+   "type": "صدور ابطالی",
+   "dividendPolicy": "ندارد",
+   "icon": "/assets/images/funds/mofid/pishtaz.svg",
+   "website": "https://pishtazfund.com",
+   "learningWebsite": "https://learning.emofid.com/pishtaz-fund/",
+   "riskLevel": "بالا",
+   "pricingInstructionUrl": "https://cmr.seo.ir/ShowRules?Id=30663&VersionId=72618&search=%D9%86%D8%AD%D9%88%D9%87%20%D8%AE%D8%B1%DB%8C%D8%AF%20%D9%88%20%D9%81%D8%B1%D9%88%D8%B4",
+   "prospectusUrl": "https://pishtaz.mofidfund.com/fundcharter",
+   "styles": {
+    "color": "#ea423e"
+   },
+   "property": [
+    "صندوق سهامی",
+    "نقدشوندگی بالا",
+    "افق سرمایه‌گذاری بلندمدت",
+    "مناسب سرمایه‌گذاران با ریسک‌پذیری بالا",
+    "ترکیبی از سهام برتر بازار سرمایه"
+   ],
+   "assetCompositions": [
+    {
+     "title": "سهام",
+     "color": "#ea423e",
+     "percent": 45
+    },
+    {
+     "title": "اوراق بدهی",
+     "color": "#0ea44a",
+     "percent": 30
+    },
+    {
+     "title": "نقد و معادل نقد",
+     "color": "#00a1e8",
+     "percent": 15
+    },
+    {
+     "title": "دیگر",
+     "color": "#ffa500",
+     "percent": 10
+    }
+   ],
+   "urls": {
+    "mobile": "https://m.easytrader.ir/menu/funds/10600?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishtaz",
+    "desktop": "https://d.easytrader.ir/funds/10600?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishtaz",
+    "mofidApp": "https://my.emofid.com/invest/fund/10600?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishtaz"
+   },
+   "showInvestors": true,
+   "chartIcon": "/assets/images/funds/pie-chart/pishtaz.svg",
+   "buttonModalEasyID": "buy2-pishtaz-easy",
+   "buttonModalMofidppID": "buy2-pishtaz-app",
+   "buttonEasyID": "buy1-pishtaz-easy",
+   "buttonMofidappID": "buy1-pishtaz-app",
+   "cancelNav": 219208,
+   "subscriptionNav": 221109,
+   "aum": 192956,
+   "investorsNumber": 36906,
+   "startDate": "۱۳۸۷",
+   "navAdjustSetting": [],
+   "returns": {
+    "return1M": 4.65,
+    "return3M": 45.13,
+    "return6M": 105.39,
+    "return1Y": 134.84,
+    "return3Y": 307.59,
+    "return5Y": 583.91,
+    "returnOverall": 219108
+   },
+   "sortinoRatio": 0.906,
+   "maximumDrawdown": -0.175,
+   "performanceMetrics": 0.7,
+   "upsideCaptureRatio": 0.868,
+   "updatedOn": "۸ آبان ۱۴۰۵"
+  },
+  {
+   "id": 2,
+   "key": "10851",
+   "code": "10851",
+   "isin": "",
+   "seo": 820,
+   "enTitle": "pishro",
+   "title": "پیشرو",
+   "fullTitle": "صندوق پیشرو",
+   "fundType": "سهامی",
+   "type": "صدور ابطالی",
+   "dividendPolicy": "ندارد",
+   "icon": "/assets/images/funds/mofid/pishro.svg",
+   "website": "https://pishrofund.com",
+   "learningWebsite": "https://learning.emofid.com/pishro_fund/",
+   "riskLevel": "بالا",
+   "pricingInstructionUrl": "https://cmr.seo.ir/ShowRules?Id=30663&VersionId=72618&search=%D9%86%D8%AD%D9%88%D9%87%20%D8%AE%D8%B1%DB%8C%D8%AF%20%D9%88%20%D9%81%D8%B1%D9%88%D8%B4",
+   "prospectusUrl": "https://pishrofund.com/AboutFund/FundProspectus",
+   "styles": {
+    "color": "#0ea44a"
+   },
+   "property": [
+    "صندوق سهامی",
+    "نقدشوندگی بالا",
+    "افق سرمایه‌گذاری بلندمدت",
+    "مناسب سرمایه‌گذاران با ریسک‌پذیری بالا",
+    "ترکیبی از سهام برتر بازار سرمایه"
+   ],
+   "assetCompositions": [
+    {
+     "title": "سهام داخلی",
+     "color": "#0ea44a",
+     "percent": 50
+    },
+    {
+     "title": "سهام خارجی",
+     "color": "#1e90ff",
+     "percent": 25
+    },
+    {
+     "title": "اوراق بدهی",
+     "color": "#ffa500",
+     "percent": 15
+    },
+    {
+     "title": "نقد",
+     "color": "#808080",
+     "percent": 10
+    }
+   ],
+   "urls": {
+    "mobile": "https://m.easytrader.ir/menu/funds/10851?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishro",
+    "desktop": "https://d.easytrader.ir/funds/10851?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishro",
+    "mofidApp": "https://my.emofid.com/invest/fund/10851?utm_source=EmofidWeb&utm_medium=button&utm_campaign=pishro"
+   },
+   "showInvestors": true,
+   "chartIcon": "/assets/images/funds/pie-chart/pishro.svg",
+   "buttonModalEasyID": "buy2-pishro-easy",
+   "buttonModalMofidppID": "buy2-pishro-app",
+   "buttonEasyID": "buy1-pishro-easy",
+   "buttonMofidappID": "buy1-pishro-app",
+   "cancelNav": 46617,
+   "subscriptionNav": 47031,
+   "aum": 207058,
+   "investorsNumber": 38968,
+   "startDate": "۱۳۹۰",
+   "navAdjustSetting": [],
+   "returns": {
+    "return1M": 3.25,
+    "return3M": 45.47,
+    "return6M": 93.59,
+    "return1Y": 134.2,
+    "return3Y": 354.67,
+    "return5Y": 622.71,
+    "returnOverall": 46517
+   },
+   "sortinoRatio": 1.199,
+   "maximumDrawdown": -0.144,
+   "performanceMetrics": 0.768,
+   "upsideCaptureRatio": 0.886,
+   "updatedOn": "۸ آبان ۱۴۰۵"
+  }
+ ]
+}

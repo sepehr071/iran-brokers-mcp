@@ -1,0 +1,548 @@
+{
+ "TreasuryBills": [
+  {
+   "isin": "IRB3TR390851",
+   "symbol": "اخزا505",
+   "name": "اسناد خزانه-م5بودجه05-080523",
+   "nameFa": "اسناد خزانه-م5بودجه05-080523",
+   "symbolFa": "اخزا505",
+   "issuerClass": "دولت",
+   "emissionVolume": 300000000,
+   "issueClose": null,
+   "issueCloseBEY": null,
+   "kind": "discount",
+   "daysToMaturity": 1016,
+   "type": "اسناد خزانه",
+   "maturity": "2029-08-13",
+   "parValue": 1000000,
+   "couponRate": null,
+   "numOfPayments": null,
+   "issueDate": "2026-08-17",
+   "accrualStartDate": "2026-08-17",
+   "firstPaymentDate": null,
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [],
+   "tseTickerKey": "52652397131976039",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [],
+   "issuers": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "marketMakers": [],
+   "guarantors": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "investmentBanks": []
+  },
+  {
+   "isin": "IRB3TR160591",
+   "symbol": "اخزا202",
+   "name": "اسنادخزانه-م2بودجه02-050923",
+   "nameFa": "اسنادخزانه-م2بودجه02-050923",
+   "symbolFa": "اخزا202",
+   "issuerClass": "دولت",
+   "emissionVolume": 150000000,
+   "issueClose": 486100,
+   "issueCloseBEY": 0.2503,
+   "kind": "discount",
+   "daysToMaturity": 43,
+   "type": "اسناد خزانه",
+   "maturity": "2026-12-14",
+   "parValue": 1000000,
+   "couponRate": null,
+   "numOfPayments": null,
+   "issueDate": "2023-09-10",
+   "accrualStartDate": "2023-09-10",
+   "firstPaymentDate": null,
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": null,
+     "close": null,
+     "high": null,
+     "low": null,
+     "closing": 958180,
+     "date": 20261101,
+     "dateTime": "2026-11-01 06:10:31",
+     "volume": 0,
+     "vwap": 958180,
+     "value": 0,
+     "numberOfTrades": 0,
+     "baseVolume": 1,
+     "marketCap": 143727000000000,
+     "previousVwap": 958180,
+     "returnValue": null,
+     "lastTradeTime": "2026-11-01 06:10:31",
+     "orderEntryState": "Authorized",
+     "closeBEY": null,
+     "closingBEY": 0.3705,
+     "closeYTM": null,
+     "closingYTM": 0.4371,
+     "tradeTodayYTM": null,
+     "issueClose": 486100,
+     "issueCloseBEY": 0.2503
+    }
+   ],
+   "tseTickerKey": "36408112396351116",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [
+    {
+     "bid": 960000,
+     "bidBEY": 0.3537,
+     "bidYTM": 0.4141,
+     "ask": 964000,
+     "askBEY": 0.317,
+     "askYTM": 0.3651
+    }
+   ],
+   "issuers": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "marketMakers": [],
+   "guarantors": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "investmentBanks": []
+  },
+  {
+   "isin": "IRB3TR170581",
+   "symbol": "اخزا203",
+   "name": "اسنادخزانه-م3بودجه02-050818",
+   "nameFa": "اسنادخزانه-م3بودجه02-050818",
+   "symbolFa": "اخزا203",
+   "issuerClass": "دولت",
+   "emissionVolume": 50000000,
+   "issueClose": 460010,
+   "issueCloseBEY": 0.3093,
+   "kind": "discount",
+   "daysToMaturity": 8,
+   "type": "اسناد خزانه",
+   "maturity": "2026-11-09",
+   "parValue": 1000000,
+   "couponRate": null,
+   "numOfPayments": null,
+   "issueDate": "2023-11-06",
+   "accrualStartDate": "2023-11-06",
+   "firstPaymentDate": null,
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": 993300,
+     "close": 992220,
+     "high": 994800,
+     "low": 992220,
+     "closing": 994020,
+     "date": 20261101,
+     "dateTime": "2026-11-01 11:50:10",
+     "volume": 7907,
+     "vwap": 994020,
+     "value": 7859755540,
+     "numberOfTrades": 13,
+     "baseVolume": 1,
+     "marketCap": 49701000000000,
+     "previousVwap": 990880,
+     "returnValue": 0.0007,
+     "lastTradeTime": "2026-11-01 11:50:10",
+     "orderEntryState": "Authorized",
+     "closeBEY": 0.3577,
+     "closingBEY": 0.2745,
+     "closeYTM": 0.4281,
+     "closingYTM": 0.3148,
+     "tradeTodayYTM": 0.4281,
+     "issueClose": 460010,
+     "issueCloseBEY": 0.3093
+    }
+   ],
+   "tseTickerKey": "58965534586323216",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [
+    {
+     "bid": 992220,
+     "bidBEY": 0.3577,
+     "bidYTM": 0.4281,
+     "ask": 994500,
+     "askBEY": 0.2523,
+     "askYTM": 0.2861
+    }
+   ],
+   "issuers": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "marketMakers": [],
+   "guarantors": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "investmentBanks": []
+  }
+ ],
+ "CouponBonds": [
+  {
+   "isin": "IRB3EE010591",
+   "symbol": "انتخاب05",
+   "name": "مرابحه انتخاب آرمان050917",
+   "nameFa": "مرابحه انتخاب آرمان050917",
+   "symbolFa": "انتخاب05",
+   "issuerClass": "شرکت",
+   "emissionVolume": 4000000,
+   "issueClose": 1000000,
+   "issueCloseBEY": 0.1924,
+   "kind": "coupon",
+   "daysToMaturity": 37,
+   "type": "مرابحه",
+   "maturity": "2026-12-08",
+   "parValue": 1000000,
+   "couponRate": 0.18,
+   "numOfPayments": 4,
+   "issueDate": "2021-12-08",
+   "accrualStartDate": "2021-12-08",
+   "firstPaymentDate": "2022-03-08",
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": null,
+     "close": null,
+     "high": null,
+     "low": null,
+     "closing": 854920,
+     "date": 20261101,
+     "dateTime": "2026-11-01 06:10:29",
+     "volume": 0,
+     "vwap": 854920,
+     "value": 0,
+     "numberOfTrades": 0,
+     "baseVolume": 1,
+     "marketCap": 3419680000000,
+     "previousVwap": 854920,
+     "returnValue": null,
+     "lastTradeTime": "2026-11-01 06:10:29",
+     "orderEntryState": "Authorized",
+     "closeYTM": null,
+     "closingYTM": 4.3777,
+     "tradeTodayYTM": null
+    }
+   ],
+   "tseTickerKey": "25594133778259557",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [
+    {
+     "bid": 840000,
+     "bidYTM": 5.3646,
+     "ask": null,
+     "askYTM": null
+    }
+   ],
+   "issuers": [],
+   "marketMakers": [],
+   "guarantors": [],
+   "investmentBanks": []
+  },
+  {
+   "isin": "IRB3PS0105B1",
+   "symbol": "غرب05",
+   "name": "مرابحه پدیده شیمی غرب 14051116",
+   "nameFa": "مرابحه پدیده شیمی غرب 14051116",
+   "symbolFa": "غرب05",
+   "issuerClass": "شرکت",
+   "emissionVolume": 2000000,
+   "issueClose": 1000000,
+   "issueCloseBEY": 0.1924,
+   "kind": "coupon",
+   "daysToMaturity": 96,
+   "type": "مرابحه",
+   "maturity": "2027-02-05",
+   "parValue": 1000000,
+   "couponRate": 0.18,
+   "numOfPayments": 4,
+   "issueDate": "2021-05-31",
+   "accrualStartDate": "2022-02-05",
+   "firstPaymentDate": "2022-05-06",
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": null,
+     "close": null,
+     "high": null,
+     "low": null,
+     "closing": 1000000,
+     "date": 20261101,
+     "dateTime": "2026-11-01 06:10:30",
+     "volume": 0,
+     "vwap": 1000000,
+     "value": 0,
+     "numberOfTrades": 0,
+     "baseVolume": 1,
+     "marketCap": 2000000000000,
+     "previousVwap": 1000000,
+     "returnValue": null,
+     "lastTradeTime": "2026-11-01 06:10:30",
+     "orderEntryState": "Authorized",
+     "closeYTM": null,
+     "closingYTM": 0.1929,
+     "tradeTodayYTM": null
+    }
+   ],
+   "tseTickerKey": "39096909316684207",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [
+    {
+     "bid": 1000000,
+     "bidYTM": 0.1929,
+     "ask": 1010000,
+     "askYTM": 0.1486
+    }
+   ],
+   "issuers": [],
+   "marketMakers": [],
+   "guarantors": [],
+   "investmentBanks": []
+  },
+  {
+   "isin": "IRB4SO040581",
+   "symbol": "اراد103",
+   "name": "مرابحه عام دولت103-ش.خ050821",
+   "nameFa": "مرابحه عام دولت103-ش.خ050821",
+   "symbolFa": "اراد103",
+   "issuerClass": "دولت",
+   "emissionVolume": 15000000,
+   "issueClose": 1000000,
+   "issueCloseBEY": 0.1881,
+   "kind": "coupon",
+   "daysToMaturity": 11,
+   "type": "مرابحه",
+   "maturity": "2026-11-12",
+   "parValue": 1000000,
+   "couponRate": 0.18,
+   "numOfPayments": 2,
+   "issueDate": "2022-03-12",
+   "accrualStartDate": "2022-03-12",
+   "firstPaymentDate": "2022-09-12",
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": null,
+     "close": null,
+     "high": null,
+     "low": null,
+     "closing": 975150,
+     "date": 20261101,
+     "dateTime": "2026-11-01 06:10:33",
+     "volume": 0,
+     "vwap": 975150,
+     "value": 0,
+     "numberOfTrades": 0,
+     "baseVolume": 1,
+     "marketCap": 14627250000000,
+     "previousVwap": 975150,
+     "returnValue": null,
+     "lastTradeTime": "2026-11-01 06:10:33",
+     "orderEntryState": "Authorized",
+     "closeYTM": null,
+     "closingYTM": 1.703,
+     "tradeTodayYTM": null
+    }
+   ],
+   "tseTickerKey": "39606634463891550",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [],
+   "issuers": [],
+   "marketMakers": [],
+   "guarantors": [],
+   "investmentBanks": []
+  }
+ ],
+ "GAMBills": [
+  {
+   "isin": "IRB7AG440591",
+   "symbol": "اگ050959",
+   "name": "گام بانک سینا0509",
+   "nameFa": "گام بانک سینا0509",
+   "symbolFa": "اگ050959",
+   "issuerClass": "شرکت",
+   "emissionVolume": 2000000,
+   "issueClose": 731500,
+   "issueCloseBEY": 0.385,
+   "kind": "discount",
+   "daysToMaturity": 50,
+   "type": "اوراق گام",
+   "maturity": "2026-12-21",
+   "parValue": 1000000,
+   "couponRate": null,
+   "numOfPayments": null,
+   "issueDate": "2025-12-07",
+   "accrualStartDate": "2025-12-07",
+   "firstPaymentDate": null,
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": null,
+     "close": null,
+     "high": null,
+     "low": null,
+     "closing": 871500,
+     "date": 20261101,
+     "dateTime": "2026-11-01 06:10:59",
+     "volume": 0,
+     "vwap": 871500,
+     "value": 0,
+     "numberOfTrades": 0,
+     "baseVolume": 1,
+     "marketCap": 1743000000000,
+     "previousVwap": 871500,
+     "returnValue": null,
+     "lastTradeTime": "2026-11-01 06:10:59",
+     "orderEntryState": "Authorized",
+     "closeBEY": null,
+     "closingBEY": 1.0764,
+     "closeYTM": null,
+     "closingYTM": 1.7293,
+     "tradeTodayYTM": null,
+     "issueClose": 731500,
+     "issueCloseBEY": 0.385
+    }
+   ],
+   "tseTickerKey": "9029255354050532",
+   "exchange": {
+    "isin": "IRTSENO",
+    "symbolLocal": "TSE"
+   },
+   "bidAsks": [],
+   "issuers": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "marketMakers": [],
+   "guarantors": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "investmentBanks": []
+  }
+ ],
+ "NonCouponBonds": [
+  {
+   "isin": "IRB3TR170581",
+   "symbol": "اخزا203",
+   "name": "اسنادخزانه-م3بودجه02-050818",
+   "nameFa": "اسنادخزانه-م3بودجه02-050818",
+   "symbolFa": "اخزا203",
+   "issuerClass": "دولت",
+   "emissionVolume": 50000000,
+   "issueClose": 460010,
+   "issueCloseBEY": 0.3093,
+   "kind": "discount",
+   "daysToMaturity": 8,
+   "type": "اسناد خزانه",
+   "maturity": "2026-11-09",
+   "parValue": 1000000,
+   "couponRate": null,
+   "numOfPayments": null,
+   "issueDate": "2023-11-06",
+   "accrualStartDate": "2023-11-06",
+   "firstPaymentDate": null,
+   "callable": false,
+   "puttable": false,
+   "convertible": false,
+   "quotes": [
+    {
+     "open": 993300,
+     "close": 992220,
+     "high": 994800,
+     "low": 992220,
+     "closing": 994020,
+     "date": 20261101,
+     "dateTime": "2026-11-01 11:50:10",
+     "volume": 7907,
+     "vwap": 994020,
+     "value": 7859755540,
+     "numberOfTrades": 13,
+     "baseVolume": 1,
+     "marketCap": 49701000000000,
+     "previousVwap": 990880,
+     "returnValue": 0.0007,
+     "lastTradeTime": "2026-11-01 11:50:10",
+     "orderEntryState": "Authorized",
+     "closeBEY": 0.3577,
+     "closingBEY": 0.2745,
+     "closeYTM": 0.4281,
+     "closingYTM": 0.3148,
+     "tradeTodayYTM": 0.4281,
+     "issueClose": 460010,
+     "issueCloseBEY": 0.3093
+    }
+   ],
+   "tseTickerKey": "58965534586323216",
+   "exchange": {
+    "isin": "IRIFBNO",
+    "symbolLocal": "IFB"
+   },
+   "bidAsks": [
+    {
+     "bid": 992220,
+     "bidBEY": 0.3577,
+     "bidYTM": 0.4281,
+     "ask": 994500,
+     "askBEY": 0.2523,
+     "askYTM": 0.2861
+    }
+   ],
+   "issuers": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "marketMakers": [],
+   "guarantors": [
+    {
+     "name": "دولت"
+    }
+   ],
+   "investmentBanks": []
+  }
+ ]
+}
