@@ -7,16 +7,18 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
 requires-python = ">=3.10"
-keywords = ["mcp", "model-context-protocol", "mofid", "emofid", "agah", "broker", "bourse", "tehran-stock-exchange", "tse", "etf", "options", "codal", "iran", "claude", "persian"]
+keywords = ["mcp", "model-context-protocol", "mofid", "emofid", "agah", "broker", "bourse", "tehran-stock-exchange", "tse", "etf", "options", "codal", "iran", "claude", "persian", "farsi", "iran-stock-market", "mutual-funds", "sukuk", "fara-bourse", "stock-screener", "market-data", "ai-agents"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
@@ -28,7 +30,8 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/sepehr071/iran-brokers-mcp"
-Issues = "https://github.com/sepehr071/iran-brokers-mcp/issues"
+Repository = "https://github.com/sepehr071/iran-brokers-mcp"
+Issues ="https://github.com/sepehr071/iran-brokers-mcp/issues"
 Website = "https://mcpfarsi.ir/"
 
 [project.scripts]
