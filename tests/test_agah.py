@@ -65,8 +65,11 @@ async def test_http_errors_become_messages(client, api):
 async def test_search_matches_arabic_spelling_and_ranks_exact_first(client, api):
     api[R + "stock/all"] = fixture("stock_all.json")
     api[R + "fund/all"] = fixture("fund_all.json")
-    api[R + "option/all"] = {"data": []}
+    api[R + "optionScreener/baseInfo"] = fixture("option_baseinfo.json")
+    api[R + "optionScreener/data"] = fixture("option_data.json")
     api[R + "industry/all"] = {"data": []}
+    r = (await client.call_tool("ag_search", {"query": "شپنا", "kind": "option"})).structured_content
+    assert r["results"][0]["kind"] == "option" and r["results"][0]["id"] == "IRO9PNES0A01"  # found by underlying symbol
     r = (await client.call_tool("ag_search", {"query": "فولاد"})).structured_content
     assert r["results"][0] == {"kind": "stock", "id": FOLD, "name": "فولاد", "company": "فولاد مبارکه اصفهان"}
     r = (await client.call_tool("ag_search", {"query": "آگاس", "kind": "fund"})).structured_content

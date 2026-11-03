@@ -226,6 +226,8 @@ async def test_announcements_resolves_company_and_type_keys(client, api):
     )
     assert "%5B" in str(call.url)  # brackets are percent-encoded like the web app
     assert r["count"] == 3 and r["announcements"][0]["title"] and r["announcements"][0]["published"]
+    await client.call_tool("mf_announcements", {"limit": 5, "offset": 10})
+    assert q(api.calls[-1])["offset"] == "2"  # the gateway pages by index, not by rows skipped
     bad = await client.call_tool("mf_announcements", {"symbol": "ناموجود"})
     assert bad.is_error
 

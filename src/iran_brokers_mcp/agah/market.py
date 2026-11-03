@@ -52,6 +52,23 @@ def _row(s: dict) -> dict:
     }
 
 
+async def option_list() -> list[dict]:
+    """Option contracts with their underlying symbol: option/all names are contract codes like 'ضشنا8056'."""
+    names, rows = await asyncio.gather(
+        research("optionScreener/baseInfo", ttl=http.CACHE_LONG), research("optionScreener/data", ttl=300)
+    )
+    recs = (dict(zip(names or [], r, strict=False)) for r in rows or [])
+    return [
+        {
+            "isin": r.get("OptionIsin"),
+            "name": r.get("Name"),
+            "nickName": r.get("Symbol"),
+            "companyName": r.get("CompanyName"),
+        }
+        for r in recs
+    ]
+
+
 async def search(
     query: Annotated[
         str, Field(description="Part of a symbol, company or fund name, Persian, e.g. 'فولاد' or 'طلا'.", min_length=1)
@@ -65,13 +82,15 @@ async def search(
     """Find the ISIN or fund code for a symbol, company, fund, option contract or industry on Agah Research.
 
     Use it first when you only have a name. Stock and option ids are ISINs (use them in br_stock, br_options(option=...)); fund ids
-    are 11-digit national codes (use them in br_fund); industry ids are ISINs for br_industries.
+    are national codes such as '14010557380_A01' (use them in br_fund); industry ids are ISINs for br_industries.
     """
     q = norm(query)
     kinds = ["stock", "fund", "option", "industry"] if kind == "any" else [kind]
     lists = await asyncio.gather(
         *(
-            {"stock": stock_list, "fund": fund_list}.get(k, lambda k=k: research(f"{k}/all", ttl=http.CACHE_LONG))()
+            {"stock": stock_list, "fund": fund_list, "option": option_list}.get(
+                k, lambda k=k: research(f"{k}/all", ttl=http.CACHE_LONG)
+            )()
             for k in kinds
         )
     )

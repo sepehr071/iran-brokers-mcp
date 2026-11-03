@@ -151,7 +151,7 @@ Every tool is read-only. If you used the separate mofid-mcp or agah-mcp servers:
 - **Agah Pedia and Academy answer only from an Iranian network** (`pediaapi.agah.com`, `academyapi.agah.com` time out from abroad). The error says so; the Mofid side of `br_learn` still answers. Do not put a foreign proxy in front of them.
 - **Mofid depends on the `accept-info` header** of the Bourse View gateway (derived from the server clock; the client resyncs on a 401). If the site changes that check, Mofid tools fail with an HTTP 401 error and the Agah side keeps working.
 - **Data is polled snapshots**, cached 30 to 60 seconds, delayed or unaudited; the market trades Saturday to Wednesday about 09:00-12:30 Tehran time.
-- The two sources use different ids for funds (Mofid ISIN, Agah 11-digit national code) and different fields, so merged tools show them side by side.
+- The two sources use different ids for funds (Mofid ISIN, Agah national code like `14010557380_A01`) and different fields, so merged tools show them side by side.
 - **Prices are Rial**; divide by 10 for Toman. Dates follow each site.
 
 ## FAQ

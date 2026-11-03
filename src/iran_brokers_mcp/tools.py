@@ -62,7 +62,7 @@ async def br_search(
     """Find the id of a stock, fund, option or index by name or symbol, in Mofid and Agah.
 
     Use it first when you only have a name. Mofid results carry an `isin` (every Mofid tool takes it); Agah results an
-    `id` (stock and option ISIN, 11-digit national code for funds, industry ISIN). Pass either to br_stock, br_history,
+    `id` (stock and option ISIN, national code like '14010557380_A01' for funds, industry ISIN). Pass either to br_stock, br_history,
     br_fund or br_options. Funds have a different id in each source, so the two lists are kept apart, not merged.
     """
     mk = {"stock": "stock", "fund": "etf", "option": "option", "index": "index", "all": "all"}[kind]

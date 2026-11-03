@@ -112,7 +112,9 @@ async def br_announcements(
         Field(description="Last publish day, Gregorian YYYY-MM-DD. Default today.", pattern=r"^\d{4}-\d{2}-\d{2}$"),
     ] = None,
     limit: Annotated[int, Field(description="Rows to return.", ge=1, le=100)] = 20,
-    offset: Annotated[int, Field(description="Rows to skip, for paging.", ge=0, le=5000)] = 0,
+    offset: Annotated[
+        int, Field(description="Rows to skip, for paging (next page = offset + limit).", ge=0, le=5000)
+    ] = 0,
 ) -> dict[str, Any]:
     """Search Codal filings (financial statements, board notices, AGM invitations, monthly activity) by company, report type and date.
 
@@ -120,7 +122,7 @@ async def br_announcements(
 
     Each row has the title, publish time, company, period, and links to the Codal page, PDF and attachments.
     """
-    params: dict[str, Any] = {"offset": offset, "limit": limit}
+    params: dict[str, Any] = {"offset": offset // limit, "limit": limit}  # the gateway's offset is a page index
     if symbol:
         q = norm(symbol)
         match = [c for c in rows(await fetch("/filing/companies", ttl=CACHE_LONG)) if norm(c.get("symbolFa")) == q]
@@ -137,7 +139,7 @@ async def br_announcements(
     start = date.fromisoformat(from_date) if from_date else end - timedelta(days=7)
     a, b = start.strftime("%Y%m%d"), end.strftime("%Y%m%d")
     params["publishDate"] = f"[{a},{b}]"
-    data = rows(await fetch("/filing/", params))
+    data = rows(await fetch("/filing/", params))[offset % limit :]
     names = {t["key"]: t.get("nameFa") for t in rows(await fetch("/filing/types", ttl=CACHE_LONG))}
     return {
         "from": start.isoformat(),
