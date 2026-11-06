@@ -1,6 +1,6 @@
 [project]
 name = "iran-brokers-mcp"
-version = "0.1.2"
+version = "0.2.0"
 description = "Unofficial read-only MCP server for Iranian brokers Mofid (emofid.com) and Agah (agah.com): stocks, funds, options, bonds, gold, screener, announcements, education."
 readme = "README.md"
 license = "MIT"
