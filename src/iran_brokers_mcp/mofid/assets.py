@@ -74,11 +74,9 @@ async def etfs(
 
 @tool("Mofid's own funds")
 async def br_mofid_funds() -> dict[str, Any]:
-    """List the 19 investment funds managed under the Mofid brand (Pishtaz, Aram, Atlas, Avand, Ayar, ...) with type, risk level, dividend policy and asset mix.
+    """List the 19 investment funds managed under the Mofid brand with type, risk level, dividend policy and asset mix.
 
-    Source: Mofid only. A marketing catalogue without prices: use br_etfs or br_stock for prices and NAV, br_fund for Agah funds.
-
-    This is the marketing catalogue of emofid.com: it has no NAV or price. Use br_etfs or br_stock for prices.
+    Source: Mofid only. A catalogue without prices or NAV: use br_etfs or br_stock for those.
     """
     d = await fetch("/funds/", site=WWW, ttl=CACHE_LONG)
     funds = d.get("value") or []
@@ -112,9 +110,7 @@ async def br_mofid_funds() -> dict[str, Any]:
 async def br_bonds(
     group: Annotated[
         Literal["TreasuryBills", "GAMBills", "CouponBonds", "NonCouponBonds"] | None,
-        Field(
-            description="TreasuryBills = government T-bills, GAMBills = Gam, CouponBonds = coupon sukuk/bonds, NonCouponBonds."
-        ),
+        Field(description="TreasuryBills = T-bills, GAMBills = Gam, CouponBonds = coupon sukuk/bonds, NonCouponBonds."),
     ] = None,
     query: Annotated[str | None, Field(description="Part of the symbol or name.")] = None,
     sort: Annotated[
@@ -129,9 +125,8 @@ async def br_bonds(
 ) -> dict[str, Any]:
     """List exchange-traded bonds, sukuk and treasury bills with maturity, coupon, price and yield to maturity.
 
-    Source: Mofid only. Bonds are not in br_search; list them here by group, symbol or yield.
-
-    Prices are Rial per 1,000,000 par. `ytm` is percent per year; `coupon_rate` is a fraction (0.18 = 18%).
+    Source: Mofid only; bonds are not in br_search. Prices are Rial per 1,000,000 par. `ytm` is percent per year;
+    `coupon_rate` is a fraction (0.18 = 18%).
     """
     d = await fetch("/bonds", ttl=300)
     q = norm(query)

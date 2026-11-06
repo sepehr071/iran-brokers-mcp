@@ -162,12 +162,9 @@ async def market_pulse(
 @tool("Stock market watch with sorting")
 async def br_stocks(
     sort: Annotated[Literal[tuple(SORTS)], Field(description="Field to rank by.")] = "value",  # type: ignore[valid-type]
-    ascending: Annotated[bool, Field(description="Lowest first (default highest first).")] = False,
+    ascending: Annotated[bool, Field(description="Lowest first.")] = False,
     limit: Annotated[int, Field(ge=1, le=100)] = 20,
-    market: Annotated[
-        Literal["بورس", "فرابورس"] | None,
-        Field(description="Only Tehran Stock Exchange (بورس) or Fara Bourse (فرابورس)."),
-    ] = None,
+    market: Annotated[Literal["بورس", "فرابورس"] | None, Field(description="Only this exchange.")] = None,
     min_value: Annotated[int, Field(description="Minimum traded value today, Rial.", ge=0)] = 0,
     scale: Annotated[
         Literal["سهم بزرگ", "سهم متوسط", "سهم کوچک"] | None, Field(description="Large, medium or small cap.")
@@ -175,11 +172,8 @@ async def br_stocks(
 ) -> dict[str, Any]:
     """Rank all listed stocks (about 750) by today's change, traded value, money flow, buyer power, queue or past returns.
 
-    Source: Agah only. Mofid's equivalents are the br_market_top rankings. Then call br_stock for one symbol.
-
-    Use it for "biggest gainers today", "most traded", "where is money entering" questions. Money is Rial, prices Rial.
-    net_money_flow is the net money moving in (positive) or out (negative). buyer_power is the individual buyer vs seller
-    average-size ratio. Then call br_stock for one symbol.
+    Source: Agah only (Mofid's equivalents: br_market_top). Money and prices are Rial. net_money_flow is positive
+    for money entering; buyer_power is the individual buyer vs seller average-size ratio. Then br_stock for one symbol.
     """
     rows = data(await http.fetch(f"{http.RESEARCH}/market/instrumentInfo")) or []
     key = SORTS[sort]
@@ -300,9 +294,7 @@ async def br_stock_events(
 ) -> dict[str, Any]:
     """List a stock's cash dividend history, capital increases, recent exchange notices and major shareholders.
 
-    Source: Agah only. Use it after br_search or br_stock.
-
-    Dividends are per share in Rial with the fiscal year. Shareholders are the latest disclosed, with percent owned.
+    Source: Agah only. Dividends are Rial per share with the fiscal year.
     """
     isin = await stock_isin(stock)
     ev, add, hold = await asyncio.gather(
@@ -340,10 +332,7 @@ async def br_technical(
 ) -> dict[str, Any]:
     """Show Agah's technical-indicator summary (moving averages and oscillators vote, RSI, MACD and others) for a stock or industry.
 
-    Source: Agah only (Mofid has only the coarse Buy/Neutral/Sell rating in br_scores). Use it after br_stock.
-
-    action is 2 strong buy, 1 buy, 0 neutral, -1 sell, -2 strong sell (inferred from the buy/sell counts). It is an
-    automatic indicator tally, not advice.
+    Source: Agah only. action: 2 strong buy, 1 buy, 0 neutral, -1 sell, -2 strong sell; an indicator tally, not advice.
     """
     industry = target.upper().startswith("IRX")
     isin = target.upper() if industry else await stock_isin(target)

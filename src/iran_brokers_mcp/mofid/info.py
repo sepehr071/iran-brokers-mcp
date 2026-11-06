@@ -31,25 +31,18 @@ async def br_news(
     kind: Annotated[
         Literal["notices", "filings", "telegram", "research"],
         Field(
-            description="notices = exchange/Codal notices (trading halts, capital increases), filings = latest Codal letters with PDF links, telegram = market Telegram channel posts, research = Mofid's weekly research PDFs."
+            description="notices = exchange/Codal notices, filings = latest Codal letters with PDF links, telegram = market channel posts, research = weekly research PDFs."
         ),
     ] = "notices",
     symbol: Annotated[
-        str | None,
-        Field(
-            description="Keep only notices/filings of this symbol (Persian, e.g. 'فملی'). Applies to notices and filings."
-        ),
+        str | None, Field(description="Notices/filings only: keep this symbol (Persian, e.g. 'فملی').")
     ] = None,
-    count: Annotated[
-        int, Field(description="How many recent items to fetch from the site (it returns the newest N).", ge=1, le=100)
-    ] = 30,
+    count: Annotated[int, Field(description="How many newest items to fetch.", ge=1, le=100)] = 30,
     chars: Annotated[int, Field(description="Cut each text at this many characters.", ge=0, le=2000)] = 300,
 ) -> dict[str, Any]:
     """Return the newest market news items: exchange notices, Codal letters, Telegram channel posts or Mofid research reports.
 
-    Source: Mofid only. Use br_announcements for a company's filing history; codal-mcp reads Codal directly.
-
-    Dates are Jalali. For a company's full filing history use br_announcements.
+    Source: Mofid only. Dates are Jalali. For a company's filing history use br_announcements.
     """
     q = norm(symbol)
     if kind == "notices":
@@ -118,9 +111,7 @@ async def br_announcements(
 ) -> dict[str, Any]:
     """Search Codal filings (financial statements, board notices, AGM invitations, monthly activity) by company, report type and date.
 
-    Source: Mofid only (Codal filings through Bourse View). Use br_search if unsure of the symbol; codal-mcp reads Codal directly.
-
-    Each row has the title, publish time, company, period, and links to the Codal page, PDF and attachments.
+    Source: Mofid only. Rows have title, publish time, company, period and links to the Codal page, PDF and attachments.
     """
     params: dict[str, Any] = {"offset": offset // limit, "limit": limit}  # the gateway's offset is a page index
     if symbol:
@@ -176,7 +167,7 @@ async def br_scores(
     section: Annotated[
         SECTIONS | None,
         Field(
-            description="Rank all symbols on one fundamental section (score out of 10). Needs isins to be omitted. Omit both for the overall table."
+            description="Rank all symbols on one fundamental section (score out of 10); omit isins. Omit both for the overall table."
         ),
     ] = None,
     min_fundamental: Annotated[
@@ -187,11 +178,9 @@ async def br_scores(
     ] = None,
     limit: Annotated[int, Field(description="Rows to return.", ge=1, le=100)] = 20,
 ) -> dict[str, Any]:
-    """Return Bourse View's valuation scores: theoretical price vs market price, a technical rating (Buy/Neutral/Sell) and a fundamental score out of 10.
+    """Return Bourse View's valuation scores: theoretical vs market price, a Buy/Neutral/Sell technical rating and a fundamental score out of 10.
 
-    Source: Mofid only. Pair with br_stock for price and ratios; br_technical (Agah) gives an indicator tally.
-
-    Pass ISINs for specific symbols, a `section` to rank the market on profitability, liquidity, momentum etc., or nothing for the best fundamental scores overall.
+    Source: Mofid only. Pass ISINs for specific symbols, a `section` to rank the market on one aspect, or nothing for the best fundamental scores overall.
     """
     if isins:
         data = rows(await fetch("/stockEvaluation", {"tickers": ",".join(isins)}))

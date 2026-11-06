@@ -62,7 +62,7 @@ Board = Literal[
     "p2fcff_asc", "p2fcfe_asc", "evtoebit_asc", "ev2s_asc", "p2s_monthly_asc", "ev2s_monthly_asc", "bidQueue",
     "askQueue",
 ]  # fmt: skip
-ISIN_HELP = "ISIN-style id from br_search, e.g. IRO1MSMI0001 (فملی), IREXOVERALLINDEX (overall index)."
+ISIN_HELP = "ISIN-style id from br_search, e.g. IRO1MSMI0001, IREXOVERALLINDEX."
 Isin = Annotated[str, Field(description=ISIN_HELP, min_length=3, max_length=40, pattern=r"^[A-Za-z0-9]+$")]
 
 
@@ -141,11 +141,10 @@ def _quote(r: dict[str, Any]) -> dict[str, Any]:
 async def br_quotes(
     isins: Annotated[list[str], Field(description=ISIN_HELP, min_length=1, max_length=30)],
 ) -> dict[str, Any]:
-    """Return live price rows for 1 to 30 symbols at once: last and closing price, change, volume, limits, best bid and ask, returns.
+    """Return live price rows for 1 to 30 symbols at once: last and closing price, change, volume, limits, bid and ask, returns.
 
-    Source: Mofid only. Use it after br_search to price several symbols at once, or for fund and index ids; br_stock gives one symbol in depth.
-
-    Prices are Rial. `last` is the last trade, `close` the closing (weighted) price the exchange uses for change. Index and fund ids work too.
+    Source: Mofid only. Prices are Rial. `last` is the last trade, `close` the closing (weighted) price used for change.
+    Index and fund ids work too.
     """
     data = rows(await fetch("/symbolLatest", {"isin": ",".join(i.strip() for i in isins)}))
     return {"count": len(data), "quotes": [_quote(r) for r in data]}
@@ -348,20 +347,18 @@ async def br_market_top(
     board: Annotated[
         Board,
         Field(
-            description="Which ranking. Value/volume: mostvalue, mostvolume, valuetomarketcap, volumetoaveragevolume30. "
+            description="Ranking. Value/volume: mostvalue, mostvolume, valuetomarketcap, volumetoaveragevolume30. "
             "Money flow: netindividual, netinstitutional, mostbuyindpower, institutionalbuypower, mostbidpressure. "
             "Size: mostmarketcap, mosteffectonindex. Returns: return1W_desc ... return1Y_desc, DailyChange_desc. "
-            "Cheapest by ratio (ascending): p2e_asc, p2b_asc, p2s_asc, p2nav_asc, p2d_asc, evtoebit_asc. "
-            "Queues: bidQueue, askQueue (symbols locked at the limit)."
+            "Cheapest ratio: p2e_asc, p2b_asc, p2s_asc, p2nav_asc, p2d_asc, evtoebit_asc. "
+            "Queues: bidQueue, askQueue."
         ),
     ],
     limit: Annotated[int, Field(description="Rows to return.", ge=1, le=20)] = 10,
 ) -> dict[str, Any]:
-    """Return one of the market's live top-N lists (most traded, biggest buy queue, best weekly return, lowest P/E, net individual buying, ...).
+    """Return one of the market's live top-N lists (most traded, buy queues, best return, lowest P/E, net individual buying, ...).
 
-    Source: Mofid only. Agah's own ranking of all stocks (money flow, buyer power, queue, returns) is br_stocks; open a row with br_stock.
-
-    Rows carry the symbol, ISIN, price, daily change and the ranking value. Prices are Rial.
+    Source: Mofid only (Agah's ranking: br_stocks). Prices are Rial.
     """
     endpoint = BOARDS[board]
     d = await fetch(
@@ -369,22 +366,23 @@ async def br_market_top(
     )
     out = []
     for r in (d.get(board) or [])[:limit]:
-        out.append(
-            {
-                "isin": r.get("isin"),
-                "symbol": r.get("name") or r.get("ticker_fa") or r.get("symbol"),
-                "price": r.get("price") or r.get("closing") or r.get("close"),
-                "change_pct": next(
-                    (r[k] for k in ("changePercent", "last_change_percent", "lastChangePercent") if k in r), None
-                ),
-                "value": r.get("value", r.get("valueNumber")),
-                "traded_value": next((r[k] for k in ("tradeValue", "trade_value", "TradeValue") if k in r), None),
-                "volume": r.get("volume"),
-                "bid_queue_value": r.get("bidValue"),
-                "ask_queue_value": r.get("askValue"),
-                "theoretical_price": r.get("theoreticalPrice"),
-            }
-        )
+        row = {
+            "isin": r.get("isin"),
+            "symbol": r.get("name") or r.get("ticker_fa") or r.get("symbol"),
+            "price": r.get("price") or r.get("closing") or r.get("close"),
+            "change_pct": next(
+                (r[k] for k in ("changePercent", "last_change_percent", "lastChangePercent") if k in r), None
+            ),
+            "value": r.get("value", r.get("valueNumber")),
+            "traded_value": next((r[k] for k in ("tradeValue", "trade_value", "TradeValue") if k in r), None),
+            "volume": r.get("volume"),
+            "bid_queue_value": r.get("bidValue"),
+            "ask_queue_value": r.get("askValue"),
+            "theoretical_price": r.get("theoreticalPrice"),
+        }
+        if row["traded_value"] == row["value"]:
+            del row["traded_value"]  # same number as `value`
+        out.append(row)
     return {"board": board, "count": len(out), "rows": out}
 
 

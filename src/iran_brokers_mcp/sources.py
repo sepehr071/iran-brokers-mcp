@@ -11,9 +11,7 @@ from pydantic import Field
 
 Source = Annotated[
     Literal["mofid", "agah", "all"],
-    Field(
-        description="mofid, agah or all. Each source answers in its own block; with all, a source that fails shows {'error': ...} and the other still answers."
-    ),
+    Field(description="mofid, agah or all; each answers in its own block."),
 ]
 
 

@@ -93,43 +93,37 @@ async def br_screener(
     kind: Annotated[
         Literal["stock", "etf", "mutual"],
         Field(
-            description="'stock' all stocks; 'etf' exchange-traded funds with market price; 'mutual' every fund with NAV issue/redeem prices."
+            description="stock = all stocks; etf = exchange-traded funds with market price; mutual = every fund with NAV issue/redeem prices."
         ),
     ],
     columns: Annotated[
         list[str] | None,
         Field(
-            description="Column names to return (e.g. ['PToE','Roe'] for stocks, ['Nav','ReturnOf365DaysAgo'] for funds). Omit for a default set; use list_columns=true to see all.",
+            description="Column names to return, e.g. ['PToE','Roe'] (stocks), ['Nav','ReturnOf365DaysAgo'] (funds). Omit for a default set.",
             max_length=20,
         ),
     ] = None,
-    sort: Annotated[str | None, Field(description="Column name to sort by (descending unless ascending=true).")] = None,
+    sort: Annotated[str | None, Field(description="Column to sort by (descending unless ascending=true).")] = None,
     ascending: bool = False,
     name_contains: Annotated[
-        str | None, Field(description="Keep rows whose name/symbol contains this text (Persian).")
+        str | None, Field(description="Keep rows whose name/symbol contains this (Persian).")
     ] = None,
     fund_type: Annotated[
         Literal["درآمد ثابت", "سهامی", "کالایی", "سایر"] | None,
         Field(description="Funds only: fixed income, equity, commodity or other."),
     ] = None,
-    min_values: Annotated[
-        dict[str, float] | None, Field(description="Keep rows where column >= value, e.g. {'Roe': 30}.")
-    ] = None,
-    max_values: Annotated[
-        dict[str, float] | None, Field(description="Keep rows where column <= value, e.g. {'PToE': 6}.")
-    ] = None,
+    min_values: Annotated[dict[str, float] | None, Field(description="Keep rows where column >= value.")] = None,
+    max_values: Annotated[dict[str, float] | None, Field(description="Keep rows where column <= value.")] = None,
     limit: Annotated[int, Field(ge=1, le=100)] = 20,
     list_columns: Annotated[
-        bool, Field(description="Return the available columns (name, Persian title) instead of rows.")
+        bool, Field(description="Return the available column names and titles instead of rows.")
     ] = False,
 ) -> dict[str, Any]:
-    """Filter, sort and compare all stocks or all funds on the same data as Agah's screener pages (about 900 stocks, 330 ETFs, 475 funds).
+    """Filter, sort and compare all stocks or funds on any column, like Agah's screener pages (900 stocks, 330 ETFs, 475 funds).
 
-    Source: Agah only. Filters stocks or funds on any column; use br_etfs for a plain ETF list with NAV gap and br_fund for one fund.
-
-    Use it for "stocks with P/E under 6 and ROE over 30", "best 1-year fixed-income funds", "ETFs with the lowest bubble".
-    Returns are percent; money is Rial; fund Nav is in Rial. Funds also have FundType. Column names are the site's
-    (see list_columns); two return families exist for ETFs: names ending in 2 are NAV returns, the others market-price returns.
+    Source: Agah only. Use it for "P/E under 6 and ROE over 30" or "best 1-year fixed-income funds"; br_etfs is the plain
+    ETF list. Returns are percent; money and fund Nav are Rial. Column names are the site's (see list_columns); for ETFs
+    names ending in 2 are NAV returns, the others market-price returns.
     """
     cols, rows = await _screener(kind)
     if list_columns:

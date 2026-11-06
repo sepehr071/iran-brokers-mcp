@@ -46,24 +46,21 @@ async def br_search(
     query: Annotated[
         str,
         Field(
-            description="Part of a symbol, company or fund name, or an ISIN; Persian or Latin, e.g. 'فولاد', 'اهرم', 'IRO1MSMI'.",
+            description="Part of a symbol, company or fund name, or an ISIN; Persian or Latin, e.g. 'فولاد'.",
             min_length=1,
         ),
     ],
     kind: Annotated[
         Literal["stock", "fund", "option", "index", "all"],
-        Field(
-            description="Instrument group: fund = ETFs and funds, index = market and industry indices. Options are thousands of contracts, so ask for them explicitly."
-        ),
+        Field(description="fund = ETFs and funds, index = market and industry indices."),
     ] = "stock",
     limit: Annotated[int, Field(description="Maximum results per source.", ge=1, le=50)] = 10,
     source: Source = "all",
 ) -> dict[str, Any]:
     """Find the id of a stock, fund, option or index by name or symbol, in Mofid and Agah.
 
-    Use it first when you only have a name. Mofid results carry an `isin` (every Mofid tool takes it); Agah results an
-    `id` (stock and option ISIN, national code like '14010557380_A01' for funds, industry ISIN). Pass either to br_stock, br_history,
-    br_fund or br_options. Funds have a different id in each source, so the two lists are kept apart, not merged.
+    Use it first when you only have a name. Mofid results carry `isin`, Agah results `id` (funds have a different id
+    in each source); pass either to br_stock, br_history, br_fund or br_options.
     """
     mk = {"stock": "stock", "fund": "etf", "option": "option", "index": "index", "all": "all"}[kind]
     ak = {"stock": "stock", "fund": "fund", "option": "option", "index": "industry", "all": "any"}[kind]
@@ -80,22 +77,15 @@ async def br_search(
 async def br_stock(
     symbol: Annotated[
         str,
-        Field(
-            description="Symbol (فولاد), part of the company name, or ISIN (IRO1FOLD0001). ETF symbols work on Mofid."
-        ),
+        Field(description="Symbol (فولاد), part of the company name, or ISIN. ETF symbols work on Mofid."),
     ],
-    order_book: Annotated[
-        bool,
-        Field(description="Also return Mofid's five best bid and ask levels (Agah's card always has its order book)."),
-    ] = False,
+    order_book: Annotated[bool, Field(description="Also return Mofid's five best bid and ask levels.")] = False,
     source: Source = "all",
 ) -> dict[str, Any]:
     """Show one stock (or, on Mofid, an ETF) in detail: price, ratios, returns, real vs legal flows, from Mofid and Agah.
 
-    Use it after br_search. Mofid gives a price card with P/E, EPS, NAV, profile, ownership flow and scores; Agah gives
-    price, ratios, margins, returns vs industry and index, flows and order book. The fields differ, so both are shown, not
-    merged. Prices are Rial. Next: br_history for candles, br_stock_events (Agah) for dividends, br_technical for signals.
-    For an Agah fund use br_fund.
+    Use it after br_search. The two sources have different fields, so both are shown. Prices are Rial. Next: br_history,
+    br_stock_events (dividends), br_technical; for an Agah fund use br_fund.
     """
 
     async def mofid() -> dict[str, Any]:
@@ -120,30 +110,20 @@ async def br_history(
     ],
     resolution: Annotated[
         Literal["1", "5", "15", "30", "60", "1D", "1W"],
-        Field(description="Candle size: minutes (1 to 60), '1D' daily or '1W' weekly. Agah has only '1D'."),
+        Field(description="Candle size: minutes, '1D' or '1W'. Agah has only '1D'."),
     ] = "1D",
-    days: Annotated[
-        int,
-        Field(
-            description="Mofid: calendar days back. Minute candles older than a few weeks may be missing.",
-            ge=1,
-            le=3650,
-        ),
-    ] = 60,
-    limit: Annotated[int, Field(description="Newest N rows (Agah: at most 250 trading days).", ge=1, le=500)] = 120,
-    adjusted: Annotated[bool, Field(description="Mofid: prices adjusted for capital increases and dividends.")] = True,
+    days: Annotated[int, Field(description="Mofid: calendar days back.", ge=1, le=3650)] = 60,
+    limit: Annotated[int, Field(description="Newest N rows (Agah: at most 250).", ge=1, le=500)] = 120,
+    adjusted: Annotated[bool, Field(description="Mofid: adjust prices for capital increases and dividends.")] = True,
     source: Annotated[
         Literal["mofid", "agah", "all"],
-        Field(
-            description="mofid (default) = OHLC candles; agah = daily rows with individual vs institutional flows; all = both."
-        ),
+        Field(description="mofid = OHLC candles; agah = daily rows with real/legal flows; all = both."),
     ] = "mofid",
 ) -> dict[str, Any]:
     """Return price history of a stock: Mofid OHLC candles (1 minute to weekly) or Agah daily rows with buy and sell flows.
 
-    The two shapes differ. Mofid: open, high, low, close, volume, value, oldest first, `time` in Tehran time, and it works
-    for indices, funds and options too. Agah: daily last and close price, volume, value and real/legal buyer and seller
-    counts, no OHLC, daily only. Prices are Rial. Use br_index for index history.
+    Mofid candles are oldest first, Tehran time, and work for indices, funds and options too. Agah rows have no OHLC.
+    Prices are Rial. Use br_index for index history.
     """
 
     async def agah() -> dict[str, Any]:
@@ -160,22 +140,19 @@ async def br_history(
 @tool("Market overview")
 async def br_market(
     breadth: Annotated[
-        bool,
-        Field(description="Also add Agah's whole-market breadth: market P/E, busiest symbols, buyer-power leaders."),
+        bool, Field(description="Agah: also add whole-market breadth (market P/E, busiest symbols).")
     ] = False,
     movers: Annotated[int, Field(description="Agah: how many index-moving symbols to list.", ge=1, le=12)] = 8,
     prices: Annotated[
         list[Literal["metals", "baseMetals", "coins", "currencies", "energies", "cryptos"]] | None,
-        Field(description="Agah: global and local price groups to include; default metals, coins and currencies."),
+        Field(description="Agah: price groups to include; default metals, coins and currencies."),
     ] = None,
     source: Source = "all",
 ) -> dict[str, Any]:
     """Show today's market snapshot: indices, traded value, money flow and buy/sell queues, from Mofid and Agah.
 
-    Start here for "how is the bourse today". Mofid: overall and sector indices (TEDPIX, Fara-bourse, equal-weight),
-    value, volume, market cap, individual net buying and queue counts. Agah: total index, net money flow, symbols moving
-    the index most, plus dollar, coin, gold, oil and crypto prices. Money is Rial. Next: br_market_top or br_stocks for
-    rankings, br_industries for sectors, br_rates for price history.
+    Start here for "how is the bourse today". Money is Rial. Next: br_market_top or br_stocks for rankings,
+    br_industries for sectors, br_rates for price history.
     """
 
     async def agah() -> dict[str, Any]:
@@ -222,7 +199,7 @@ async def br_industries(
             "money_flow",
         ],
         Field(
-            description="value, return_1m and return_1y work in both sources. Mofid only: market_cap, return_1w, return_3m, p2e, dividend_yield. Agah only: change, money_flow. An unsupported sort is an error in that source's block."
+            description="value, return_1m, return_1y: both sources. Mofid only: market_cap, return_1w, return_3m, p2e, dividend_yield. Agah only: change, money_flow."
         ),
     ] = "value",
     limit: Annotated[int, Field(description="Rows per source.", ge=1, le=60)] = 15,
@@ -235,9 +212,8 @@ async def br_industries(
 ) -> dict[str, Any]:
     """Rank the bourse industries by value, return, market cap, P/E or money flow, from Mofid and Agah.
 
-    Mofid: 53 industries with valuation ratios (P/E, P/B, ROE, margin, beta, dividend yield) and returns. Agah: today's
-    change, traded value, money flow, advancers and decliners, 30-day and 1-year returns; with `industry` it shows that
-    industry's return table and member stocks. Money is Rial. Next: br_technical with an industry ISIN, or br_stock.
+    With `industry` (Agah) it shows that industry's return table and member stocks. Money is Rial. Next:
+    br_technical with an industry ISIN, or br_stock.
     """
     if industry and source == "mofid":
         raise ToolError(
@@ -267,23 +243,17 @@ async def br_index(
     index: Annotated[
         str,
         Field(
-            description="Index ISIN: IREXOVERALLINDEX (overall), IRX6XTPI0006 (TEDPIX), IRXZXOCI0006 (Fara-bourse), or an industry index from br_search kind='index'. Agah history exists only for the total index.",
+            description="Index ISIN: IREXOVERALLINDEX (overall), IRX6XTPI0006 (TEDPIX), IRXZXOCI0006 (Fara-bourse), or one from br_search kind='index'. Agah history: total index only.",
             pattern=r"^[A-Za-z0-9]+$",
         ),
     ] = "IREXOVERALLINDEX",
-    days: Annotated[
-        int,
-        Field(
-            description="Add this many days of daily history (0 = none). Agah gives about 31 or 365 days.", ge=0, le=365
-        ),
-    ] = 0,
+    days: Annotated[int, Field(description="Add this many days of daily history (0 = none).", ge=0, le=365)] = 0,
     members: Annotated[int, Field(description="Mofid: list this many member symbols (0 = none).", ge=0, le=100)] = 0,
     source: Source = "all",
 ) -> dict[str, Any]:
-    """Show a market index (Mofid: market cap, free float, P/E and other ratios, intraday move, members) and its daily history.
+    """Show a market index (Mofid: market cap, free float, ratios, intraday move, members) and its daily history.
 
-    Without `days` only Mofid answers, with the index card. With `days`, Mofid adds daily candles of the index and Agah
-    returns its total-index series (series 0; Agah does not name its other two series, so they are not offered). Next:
+    Without `days` only Mofid answers. With `days`, Mofid adds daily candles and Agah its total-index series. Next:
     br_industries for sector indices, br_market for today's snapshot.
     """
     if source == "agah" and not days:
@@ -323,32 +293,24 @@ AGAH_ETF_TYPES = {"fixedincome": "درآمد ثابت", "stock": "سهامی", "
 async def br_etfs(
     type: Annotated[
         mofid_assets.ETF_TYPES | None,
-        Field(
-            description="Fund family; omit for all. fixedincome = income funds, goldetf = gold-backed. Agah knows only fixedincome, stock and goldetf (as commodity funds)."
-        ),
+        Field(description="Fund family; omit for all. Agah knows only fixedincome, stock and goldetf."),
     ] = None,
     query: Annotated[str | None, Field(description="Part of the fund symbol, Persian or Latin.")] = None,
     sort: Annotated[
         Literal["value", "market_cap", "change", "nav_gap", "volume"],
-        Field(
-            description="value = traded value today, change = price change %, nav_gap = market price above(+)/below(-) NAV in %. market_cap is Mofid only."
-        ),
+        Field(description="nav_gap = market price above(+)/below(-) NAV in %. market_cap is Mofid only."),
     ] = "value",
     limit: Annotated[int, Field(description="Rows per source.", ge=1, le=100)] = 20,
     ascending: Annotated[bool, Field(description="Lowest first.")] = False,
     source: Annotated[
         Literal["mofid", "agah", "all"],
-        Field(
-            description="mofid (default) = 375 ETFs; agah = 331 listed ETFs with NAV returns and manager; all = both for comparison."
-        ),
+        Field(description="mofid (default) = 375 ETFs; agah = 331 ETFs with NAV returns and manager; all = both."),
     ] = "mofid",
 ) -> dict[str, Any]:
     """List exchange-traded funds with price, NAV and the gap between them (bubble), traded value and returns.
 
-    Use for "cheapest gold ETF" or "fixed-income ETF with the lowest bubble". Mofid rows: price, NAV, gap %, change,
-    value, volume, market cap, signal. Agah rows: price, bubble, NAV, 1-month and 1-year NAV returns, value, manager.
-    Money is Rial. Next: br_stock (Mofid card) or br_fund (Agah detail and history) for one fund; br_screener
-    (kind='etf' or 'mutual') filters funds on any column.
+    Use for "cheapest gold ETF" or "lowest bubble". Money is Rial. Next: br_stock (Mofid card) or br_fund (Agah) for
+    one fund; br_screener (kind='etf' or 'mutual') filters funds on any column.
     """
 
     async def agah() -> dict[str, Any]:
@@ -386,26 +348,21 @@ async def br_learn(
     kind: Annotated[
         Literal["articles", "categories", "courses"],
         Field(
-            description="articles = search or read articles (both sources), categories = Mofid blog topics with ids, courses = Agah Academy topics and course search."
+            description="articles = search or read articles, categories = Mofid blog topics with ids, courses = Agah Academy."
         ),
     ] = "articles",
     query: Annotated[
         str | None,
-        Field(
-            description="Persian search words, e.g. 'صندوق طلا', 'اختیار معامله'. Agah article search needs 4+ characters."
-        ),
+        Field(description="Persian search words, e.g. 'صندوق طلا'. Agah article search needs 4+ characters."),
     ] = None,
     ref: Annotated[
         str | None,
         Field(
-            description="Read one article in full: a number (Mofid post id) or a slug (Agah Pedia, e.g. 'return-on-equity'), taken from a previous result."
+            description="Read one article in full: Mofid post id (number) or Agah Pedia slug, from a previous result."
         ),
     ] = None,
     category_id: Annotated[
-        str | None,
-        Field(
-            description="Browse one category; needs source 'mofid' (id from kind='categories') or 'agah' (category_id of a result)."
-        ),
+        str | None, Field(description="Browse one category; needs source 'mofid' or 'agah'.")
     ] = None,
     page: Annotated[int, Field(description="Page number, 1-based.", ge=1, le=500)] = 1,
     per_page: Annotated[int, Field(description="Articles per page.", ge=1, le=30)] = 10,
@@ -416,10 +373,8 @@ async def br_learn(
 ) -> dict[str, Any]:
     """Search the Mofid learning blog and Agah Pedia for bourse, fund, option and gold explainers, or read one article.
 
-    Use it for "what is ROE" or "how do gold ETFs work": search first, then call again with `ref` from a result to read
-    it. Mofid ids are numbers, Agah ids are slugs, so `ref` picks the source itself. kind='categories' lists the Mofid blog
-    topics; kind='courses' lists Agah Academy topics or searches its courses (titles and links only). Agah Pedia and
-    Academy answer only from an Iranian network (the error says so elsewhere). Article text is third-party content.
+    Search first, then call again with `ref` from a result to read it (`ref` picks the source itself). Agah Pedia and
+    Academy answer only from an Iranian network. Article text is third-party content.
     """
     if ref is not None:
         if ref.isdigit():
@@ -454,32 +409,24 @@ async def br_fund(
     funds: Annotated[
         list[str],
         Field(
-            description="Fund national code (11 digits), name or ETF symbol, e.g. 'هستی بخش آگاه' or '14004856587'. One fund for detail or history; two to six to compare.",
+            description="Fund national code (11 digits), name or ETF symbol, e.g. '14004856587'. One fund for detail or history; two to six to compare.",
             min_length=1,
             max_length=6,
         ),
     ],
     metric: Annotated[
         Literal["nav", "bubble", "trade_value", "nav_gap", "price", "returns"] | None,
-        Field(
-            description="With one fund: return this daily series instead of the detail. price and returns have unlabeled columns."
-        ),
+        Field(description="With one fund: return this daily series instead of the detail."),
     ] = None,
     points: Annotated[int, Field(description="With metric: most recent N daily points.", ge=1, le=400)] = 60,
     columns: Annotated[
-        list[str] | None,
-        Field(
-            description="With several funds: screener column names to compare; omit for returns, NAV, size and manager."
-        ),
+        list[str] | None, Field(description="With several funds: screener column names; omit for a default set.")
     ] = None,
 ) -> dict[str, Any]:
     """Show an investment fund from Agah: type, NAV, returns, asset mix and holdings, a daily history, or a side-by-side comparison.
 
-    Source: Agah only (Mofid shows ETFs through br_stock and br_etfs, and its own funds through br_mofid_funds). One fund
-    gives the detail with issue and redeem prices, returns vs index, dollar and gold, and for an ETF the live bubble and
-    order book. One fund with `metric` gives NAV, bubble, traded value or NAV gap history, oldest first. Several funds
-    give returns, NAV, manager and asset mix side by side. Money is Rial, returns percent. Find codes with
-    br_search(kind='fund') and filter many funds with br_screener.
+    Source: Agah only (Mofid ETFs: br_stock, br_etfs; Mofid funds: br_mofid_funds). `metric` gives a daily series,
+    oldest first. Money is Rial, returns percent. Find codes with br_search(kind='fund'); filter many with br_screener.
     """
     if len(funds) > 1:
         if metric:
@@ -495,20 +442,15 @@ async def br_options(
     option: Annotated[
         str | None,
         Field(
-            description="Option ISIN from a previous result, e.g. 'IRO9PNES0A01', to show that one contract. Omit to list the chain.",
+            description="Option ISIN from a previous result, to show that one contract. Omit to list the chain.",
             pattern=r"^IR[A-Z0-9]{10}$",
         ),
     ] = None,
     underlying: Annotated[
-        str | None,
-        Field(description="Chain filter: underlying symbol, e.g. 'شپنا' (Persian), or part of the company name."),
+        str | None, Field(description="Chain filter: underlying symbol (Persian, e.g. 'شپنا') or company name part.")
     ] = None,
-    side: Annotated[
-        Literal["call", "put"] | None, Field(description="Chain filter: call (اختیار خرید) or put (اختیار فروش) only.")
-    ] = None,
-    expiry: Annotated[
-        str | None, Field(description="Chain filter: expiry date YYYY-MM-DD (Gregorian) as in the results.")
-    ] = None,
+    side: Annotated[Literal["call", "put"] | None, Field(description="Chain filter.")] = None,
+    expiry: Annotated[str | None, Field(description="Chain filter: expiry YYYY-MM-DD (Gregorian).")] = None,
     sort: Annotated[
         Literal["value", "open_interest", "leverage", "days", "strike"], Field(description="Chain order.")
     ] = "value",
@@ -516,9 +458,8 @@ async def br_options(
 ) -> dict[str, Any]:
     """List stock-option contracts (about 1,600) with strike, expiry, moneyness, open interest and flows, or show one contract.
 
-    Source: Agah only. Use the chain for "options on Shepna expiring soon" or "most traded calls"; prices are Rial per
-    underlying share and each row has its contract size. Pass `option` (an ISIN from the chain) for one contract: margin,
-    break-even distance, order book, real/legal flows. Find an underlying with br_search first if unsure of the symbol.
+    Source: Agah only. Prices are Rial per underlying share. Pass `option` (ISIN from the chain) for one contract with
+    margin, break-even and order book. Use br_search first if unsure of the underlying.
     """
     if option:
         return await agah_funds.option(option)
@@ -530,30 +471,28 @@ async def br_rates(
     kind: Annotated[
         Literal["currency", "gold_coin", "commodity"],
         Field(
-            description="currency = free-market currencies and crypto (Rial), gold_coin = coins, 18k gold, ounce and 1-day coin certificates (Rial), commodity = oil, metals (USD)."
+            description="currency = currencies and crypto (Rial), gold_coin = coins, 18k gold, ounce (Rial), commodity = oil, metals (USD)."
         ),
     ] = "gold_coin",
     query: Annotated[
         str | None,
         Field(
-            description="Filter by code (USD, EUR, USDT, BTC, IMCOIN, Gold18, WTI, Cu) or Persian name. With history_days it must be the exact code."
+            description="Filter by code (USD, EUR, USDT, BTC, IMCOIN, Gold18, WTI, Cu) or Persian name. History needs the exact code."
         ),
     ] = None,
     history_days: Annotated[
         int,
         Field(
-            description="0 = live prices. Above 0 (with an exact code in query) = daily history over this many calendar days.",
+            description="0 = live prices; above 0 = daily history over this many days (exact code in query).",
             ge=0,
             le=3650,
         ),
     ] = 0,
-    limit: Annotated[int, Field(description="History: return only the newest N days.", ge=1, le=400)] = 90,
+    limit: Annotated[int, Field(description="History: newest N days.", ge=1, le=400)] = 90,
 ) -> dict[str, Any]:
     """Return free-market prices of currencies, crypto, coins, 18k gold, the global ounce, oil and metals, or one code's daily history.
 
-    Source: Mofid only. Live rows have price, change, time and 7/30/365-day low and high. Rial prices: divide by 10 for
-    Toman. History rows have close and change % (gold and coin rows also open, high, low), oldest first, back to 2019-2021.
-    Agah's br_market also shows dollar, coin, gold and oil prices as a quick glance.
+    Source: Mofid only. Rial prices: divide by 10 for Toman. History is oldest first, back to 2019-2021.
     """
     if history_days:
         if not query or not re.fullmatch(r"[A-Za-z0-9]{2,20}", query):
