@@ -189,7 +189,7 @@ Yes for Mofid and Agah Research. Agah Pedia and Academy answer only from an Iran
 <details>
 <summary><b>Is it allowed?</b></summary>
 
-It calls the public endpoints the websites use, two requests at a time per broker and with caching, and each client sends the headers its site's web app sends (Chrome TLS fingerprint, Referer, Accept, Mofid's `accept-info`).
+It calls the public endpoints the websites use, two requests at a time per broker and with caching.
 </details>
 
 <details>
